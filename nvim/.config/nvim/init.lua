@@ -1,0 +1,6 @@
+require "hoangat.core.options"
+require "hoangat.core.keymaps"
+require "hoangat.core.utils"
+require "hoangat.core.autocmd"
+require "hoangat.core.compiler"
+require "hoangat.modules.plugins"
