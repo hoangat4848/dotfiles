@@ -67,8 +67,8 @@ map("n", "J", "mzJ`z")
 
 --[[ INSERT ]]
 map("i", "<C-c>", "<Esc>")
-map("i", "jk", "<Esc>")
-map("i", "kj", "<Esc>")
+-- map("i", "jk", "<Esc>")
+-- map("i", "kj", "<Esc>")
 map("i", "<S-CR>", "<Esc>O")
 map("i", "<C-CR>", "<Esc>o")
 
@@ -113,7 +113,7 @@ map("c", "<C-f>", '<C-R>=expand("%:p")<CR>', { silent = false })
 
 --[[ Git ]]
 map("n", "<space>gs", "<cmd>Neogit<CR>")
- --[[ Telescope ]]
+--[[ Telescope ]]
 local is_git_dir = os.execute "git rev-parse --is-inside-work-tree >> /dev/null 2>&1"
 if is_git_dir == 0 then
   map("n", "<C-p>", '<cmd>lua require"telescope.builtin".git_files()<CR>')
@@ -149,3 +149,73 @@ end
 --[[ Zen mode ]]
 -- map("n", "<space>z", "<cmd>ZenMode<CR>")
 --vim.cmd([[command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor]])
+
+-- Syntax Tree Surfer
+
+-- Normal Mode Swapping
+vim.api.nvim_set_keymap(
+  "n",
+  "vd",
+  '<cmd>lua require("syntax-tree-surfer").move("n", false)<cr>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "vu",
+  '<cmd>lua require("syntax-tree-surfer").move("n", true)<cr>',
+  { noremap = true, silent = true }
+)
+-- .select() will show you what you will be swapping with .move(), you'll get used to .select() and .move() behavior quite soon!
+vim.api.nvim_set_keymap(
+  "n",
+  "vx",
+  '<cmd>lua require("syntax-tree-surfer").select()<cr>',
+  { noremap = true, silent = true }
+)
+-- .select_current_node() will select the current node at your cursor
+vim.api.nvim_set_keymap(
+  "n",
+  "vn",
+  '<cmd>lua require("syntax-tree-surfer").select_current_node()<cr>',
+  { noremap = true, silent = true }
+)
+
+-- NAVIGATION: Only change the keymap to your liking. I would not recommend changing anything about the .surf() parameters!
+vim.api.nvim_set_keymap(
+  "x",
+  "J",
+  '<cmd>lua require("syntax-tree-surfer").surf("next", "visual")<cr>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "K",
+  '<cmd>lua require("syntax-tree-surfer").surf("prev", "visual")<cr>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "H",
+  '<cmd>lua require("syntax-tree-surfer").surf("parent", "visual")<cr>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "L",
+  '<cmd>lua require("syntax-tree-surfer").surf("child", "visual")<cr>',
+  { noremap = true, silent = true }
+)
+
+-- SWAPPING WITH VISUAL SELECTION: Only change the keymap to your liking. Don't change the .surf() parameters!
+vim.api.nvim_set_keymap(
+  "x",
+  "<A-J>",
+  '<cmd>lua require("syntax-tree-surfer").surf("next", "visual", true)<cr>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "x",
+  "<A-K>",
+  '<cmd>lua require("syntax-tree-surfer").surf("prev", "visual", true)<cr>',
+  { noremap = true, silent = true }
+)

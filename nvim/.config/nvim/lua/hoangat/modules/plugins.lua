@@ -4,46 +4,6 @@ local function get_config(plugin_name)
   return string.format('require("hoangat.modules.config.%s")', plugin_name)
 end
 
-local plugins = {
-  --==========================================================
-
-  { -- Markdown
-    "preservim/vim-markdown",
-  },
-
-  { -- Zenmode
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {
-        window = {
-          width = 100, -- width of the Zen window
-          height = 1, -- height of the Zen window
-        },
-      }
-    end,
-  },
-
-  { -- Copilot
-    "github/copilot.vim",
-    config = function()
-      vim.cmd [[imap <silent><script><expr> <C-L> copilot#Accept("\<CR>")]]
-      vim.g.copilot_no_tab_map = true
-      vim.g.copilot_filetypes = {
-        ["*"] = true,
-        gitcommit = false,
-        NeogitCommitMessage = false,
-      }
-    end,
-  },
-  { -- Git related
-    { -- Like magit
-      "TimUntersberger/neogit",
-      config = get_config "neogit",
-      requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" },
-    },
-  },
-}
-
 -- Automatically install packer
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
@@ -259,19 +219,16 @@ if packer then
 
     use { -- TODO comments highlight
       "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup {}
-      end,
+      config = get_config "todo-comments",
     }
 
-    use { -- Smooth scrolling
-      "karb94/neoscroll.nvim",
-      config = get_config "neoscroll",
-    }
     use { -- Zenmode
       "folke/zen-mode.nvim",
       config = get_config "zenmode",
+    }
+    use { -- Smooth scrolling
+      config = get_config "neoscroll",
+      "karb94/neoscroll.nvim",
     }
 
     use { "folke/twilight.nvim", config = get_config "twilight" }
@@ -298,6 +255,8 @@ if packer then
       requires = "nvim-treesitter/nvim-treesitter",
       config = get_config "nvim-gps",
     }
+
+    use "ziontee113/syntax-tree-surfer"
 
     use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
 
