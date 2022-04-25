@@ -32,12 +32,23 @@ local diff = {
   cond = hide_in_width,
 }
 
--- local mode = {
---   "mode",
---   fmt = function(str)
---     return "-- " .. str .. " --"
---   end,
--- }
+local modes = {
+  NORMAL = "⊂(◉‿◉)つ",
+  INSERT = "ᕙ(⇀‸↼‶)ᕗ",
+  VISUAL = "ᕦ(ò_óˇ)ᕤ",
+  ["V-LINE"] = "ԅ(≖‿≖ԅ) ",
+  ["V-BLOCK"] = "ᕙ(ಥ﹏ಥ)7",
+  COMMAND = " (⊙.☉)7 ",
+  REPLACE = "ლ(ಠ_ಠ ლ)"
+
+}
+
+local mode = {
+  "mode",
+  fmt = function(str)
+    return modes[str]
+  end,
+}
 
 -- local filetype = {
 --   "filetype",
@@ -84,8 +95,8 @@ lualine.setup {
     globalstatus = true,
   },
   sections = {
-    lualine_a = { "mode" },
-
+    -- lualine_a = { "mode" },
+    lualine_a = { mode },
     lualine_b = {
       {
         "branch",
