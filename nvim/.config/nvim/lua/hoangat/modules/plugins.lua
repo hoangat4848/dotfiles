@@ -47,6 +47,7 @@ if packer then
         "JoosepAlviste/nvim-ts-context-commentstring",
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-refactor",
+        { "mfussenegger/nvim-treehopper", config = get_config "nvim-treehopper" },
       },
     }
     use { -- Lsp
@@ -61,8 +62,12 @@ if packer then
         "simrat39/symbols-outline.nvim",
         "jose-elias-alvarez/nvim-lsp-ts-utils",
         { "folke/trouble.nvim", config = get_config "lsp.trouble" }, -- A pretty list for showing diagnostics, references..
-        -- { "filipdutescu/renamer.nvim", config = get_config("lsp.renamer") },
-        --{ "ray-x/navigator.lua", requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" } },
+        -- {
+        --   "tami5/lspsaga.nvim",
+        --   config = function()
+        --     require "lspsaga"
+        --   end,
+        -- },
       },
     }
 
@@ -106,6 +111,8 @@ if packer then
       requires = {
         "nvim-lua/plenary.nvim",
         "jvgrootveld/telescope-zoxide",
+        { "ahmedkhalf/project.nvim", config = get_config "project" },
+        "nvim-telescope/telescope-file-browser.nvim",
       },
     }
 
@@ -186,15 +193,12 @@ if packer then
       config = get_config "lualine",
     }
 
-    use {
-      "kdheepak/tabline.nvim",
-      config = get_config "tabline",
+    use { -- Bufferline
+      "akinsho/bufferline.nvim",
+      config = get_config "bufferline",
     }
 
-    -- use { -- Bufferline
-    --   "akinsho/bufferline.nvim",
-    --   config = get_config "bufferline",
-    -- }
+    use { "famiu/bufdelete.nvim" } -- Delete buffer keep window stay in place.
 
     use { "rcarriga/nvim-notify", config = get_config "notify" } -- Better notifications
 
@@ -210,6 +214,21 @@ if packer then
       end,
     }
 
+    use { -- TODO comments highlight
+      "folke/todo-comments.nvim",
+      config = get_config "todo-comments",
+    }
+
+    use {
+      "LudoPinelli/comment-box.nvim",
+      config = get_config "comment-box",
+    }
+
+    use { -- Better looking quickfix list
+      "kevinhwang91/nvim-bqf",
+      ft = "qf",
+    }
+
     use { -- Stabilize windows when splits
       "luukvbaal/stabilize.nvim",
       config = function()
@@ -217,21 +236,22 @@ if packer then
       end,
     }
 
-    use { -- TODO comments highlight
-      "folke/todo-comments.nvim",
-      config = get_config "todo-comments",
-    }
-
     use { -- Zenmode
       "folke/zen-mode.nvim",
       config = get_config "zenmode",
     }
-    use { -- Smooth scrolling
-      config = get_config "neoscroll",
-      "karb94/neoscroll.nvim",
-    }
 
     use { "folke/twilight.nvim", config = get_config "twilight" }
+
+    use { -- Smooth scrolling
+      "karb94/neoscroll.nvim",
+      config = get_config "neoscroll",
+    }
+
+    use { -- Easily see cursor movement
+      "edluffy/specs.nvim",
+      config = get_config "specs",
+    }
 
     --[[ Editing support ]]
     use { "numToStr/Comment.nvim", config = get_config "comment" } -- comment things easily
@@ -262,6 +282,26 @@ if packer then
 
     use { -- Markdown
       "preservim/vim-markdown",
+    }
+
+    use { "junegunn/vim-easy-align" } -- No lua alternative :(
+
+    use { -- Moving between windows better
+      "https://gitlab.com/yorickpeterse/nvim-window",
+      config = get_config "nvim-window",
+    }
+
+    use {
+      "nyngwang/NeoZoom.lua",
+      branch = "neo-zoom-original", -- UNCOMMENT THIS, if you prefer the old one
+      config = function()
+        vim.api.nvim_set_keymap(
+          "n",
+          "<leader><CR>",
+          "<cmd>NeoZoomToggle<CR>",
+          { noremap = true, silent = true, nowait = true }
+        )
+      end,
     }
 
     --use({ "mizlan/iswap.nvim", config = get_config("iswap") })

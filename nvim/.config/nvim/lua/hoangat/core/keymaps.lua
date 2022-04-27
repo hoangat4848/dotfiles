@@ -17,8 +17,6 @@ map("n", "<CR>", '{->v:hlsearch ? ":nohl\\<CR>" : "\\<CR>"}()', { expr = true })
 map("n", "x", '"_x')
 map("n", "X", '"_X')
 map("n", "<C-s>", "<cmd>w<CR>")
-map("n", "<leader>q", "<CMD>q<cr>")
--- map("n", "<leader>w", "<CMD>w<cr>")
 map("n", "<leader>E", "<CMD>e ~/.config/nvim/init.lua<cr>")
 map("n", "<F9>", '<cmd>lua require"core.compiler".compile_and_run()<CR>')
 
@@ -45,13 +43,14 @@ map("n", "<space>=", "<cmd>wincmd =<CR>")
 -- Copy relative filepath eg: from nvim folder this would look like: "lua/core/keymaps.lua" copied to clipboard
 map(
   "n",
-  "<leader>fp",
+  "<leader>cp",
   '<cmd>let @*=fnamemodify(expand("%"), ":~:.") | echo( \'"\' . (fnamemodify(expand("%"), ":~:.")) . \'" copied to clipboard\')<CR>'
 )
 
 -- Add new line(below and above) without leaving normal mode
 map("n", "<leader>o", ':<C-u>call append(line("."),   repeat([""], v:count1))<CR>')
 map("n", "<leader>O", ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>')
+map("n", "<leader><leader>o", ':<C-u>call append(line("."), "")<CR>:<C-u>call append(line(".")-1, "")<CR>')
 
 -- Move text up and down
 map("n", "<A-j>", ":m .+1<CR>==")
@@ -73,6 +72,13 @@ map("i", "<S-CR>", "<Esc>O")
 map("i", "<C-CR>", "<Esc>o")
 
 --[[ VISUAL ]]
+
+-- Add new line(below and above) without leaving visual mode
+
+map("x", "<leader>o", "<ESC>o<ESC>gv")
+map("x", "<leader>O", "o<ESC>O<ESC>gvo")
+map("x", "<leader><leader>o", "<ESC>o<ESC>gvo<ESC>O<ESC>gvo")
+
 -- Indent then select again
 map("v", "<", "<gv")
 map("v", ">", ">gv")
@@ -89,7 +95,8 @@ map("x", "<A-j>", ":move '>+1<CR>gv-gv")
 map("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- Yank and then move cursor back
-map("v", "y", "ygv<Esc>")
+map("v", "y", "ygv")
+map("x", "y", "ygv")
 
 --[[ Terminal ]]
 map("t", "<C-w>h", "<cmd>wincmd h<CR>")
@@ -120,26 +127,6 @@ if is_git_dir == 0 then
 else
   map("n", "<C-p>", '<cmd>lua require"telescope.builtin".find_files()<CR>')
 end
-
--- map("n", "<space>fb", "<cmd>Telescope buffers theme=get_dropdown<CR>")
--- map("n", "<space>fh", '<cmd>lua require"telescope.builtin".help_tags()<CR>')
--- map("n", "<space>fo", '<cmd>lua require"telescope.builtin".oldfiles()<CR>')
--- map("n", "<space>fw", '<cmd>lua require"telescope.builtin".live_grep()<CR>')
---map("n", "<space>fd", '<cmd>lua require"telescope.builtin".git_files({cwd = "$HOME/.dotfiles" })<CR>')
-
---[[ Tree ]]
--- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
-
--- Vim surround ( noremap need to be false to work)
--- map("n", "ds", "<Plug>Dsurround", { noremap = false })
--- map("n", "cs", "<Plug>Csurround", { noremap = false })
--- map("n", "cS", "<Plug>CSurround", { noremap = false })
--- map("n", "ys", "<Plug>Ysurround", { noremap = false })
--- map("n", "yS", "<Plug>YSurround", { noremap = false })
--- map("n", "ss", "<Plug>Yssurround", { noremap = false })
--- map("n", "SS", "<Plug>YSsurround", { noremap = false })
--- map("x", "vs", "<Plug>VSurround", { noremap = false })
--- map("x", "vS", "<Plug>VgSurround", { noremap = false })
 
 --[[ Git signs ]]
 -- map("n", "]g", '&diff ? "]g" : "<cmd>Gitsigns next_hunk<CR>"', { expr = true })
@@ -195,14 +182,14 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "x",
-  "H",
-  '<cmd>lua require("syntax-tree-surfer").surf("parent", "visual")<cr>',
+  "L",
+  '<cmd>lua require("syntax-tree-surfer").surf("child", "visual")<cr>',
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
   "x",
-  "L",
-  '<cmd>lua require("syntax-tree-surfer").surf("child", "visual")<cr>',
+  "H",
+  '<cmd>lua require("syntax-tree-surfer").surf("parent", "visual")<cr>',
   { noremap = true, silent = true }
 )
 
@@ -219,3 +206,7 @@ vim.api.nvim_set_keymap(
   '<cmd>lua require("syntax-tree-surfer").surf("prev", "visual", true)<cr>',
   { noremap = true, silent = true }
 )
+
+--[[ VIM EASY ALIGN ]]
+
+vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")

@@ -5,16 +5,17 @@ telescope.setup {
   defaults = {
     layout_config = {
       width = 0.75,
-      prompt_position = "top",
       preview_cutoff = 100,
+      prompt_position = "top",
       horizontal = {
         height = 0.9,
         preview_cutoff = 120,
         preview_width = 0.6,
-        prompt_position = "bottom",
-        width = 0.8,
+        prompt_position = "top",
+        results_width = 0.8,
       },
     },
+    sorting_strategy = "ascending",
 
     -- Must install ripgrep!!!!
     find_command = {
@@ -36,6 +37,11 @@ telescope.setup {
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     dynamic_preview_title = true,
+    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+    -- Developer configurations: Not meant for general override
+    buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 
     mappings = {
       i = {
@@ -103,7 +109,21 @@ telescope.setup {
     },
   },
   pickers = {},
-  extensions = {},
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+  },
 }
 
 telescope.load_extension "zoxide"
+telescope.load_extension "projects"
+telescope.load_extension "file_browser"

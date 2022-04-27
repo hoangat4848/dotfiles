@@ -42,4 +42,24 @@ kanagawa.setup {
 -- setup must be called before loading
 vim.cmd "colorscheme kanagawa"
 
+local colors = require("kanagawa.colors").setup()
+
 vim.cmd "hi FocusedSymbol guibg=#FFA066 guifg=#16161D gui=italic,bold"
+
+local fg = require("hoangat.core.utils").fg
+local fg_bg = require("hoangat.core.utils").fg_bg
+local bg = require("hoangat.core.utils").bg
+
+-- Telescope
+fg_bg("TelescopeBorder", colors.sumiInk1b, colors.sumiInk1b)
+fg_bg("TelescopePromptBorder", colors.sumiInk2, colors.sumiInk2)
+
+fg_bg("TelescopePromptNormal", colors.fujiWhite, colors.sumiInk2)
+fg_bg("TelescopePromptPrefix", colors.oniViolet, colors.sumiInk2)
+
+bg("TelescopeNormal", colors.sumiInk1b)
+
+fg_bg("TelescopePromptTitle", colors.sumiInk1, colors.oniViolet)
+fg_bg("TelescopePreviewTitle", colors.sumiInk1, colors.springGreen)
+fg_bg("TelescopeResultsTitle", colors.sumiInk1b, colors.sumiInk1b)
+-- bg("TelescopeSelection", black2)

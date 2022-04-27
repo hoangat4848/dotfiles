@@ -133,7 +133,7 @@ wk.register({
   },
   e = { "<CMD>NvimTreeToggle<CR>", "File Explorer" },
   f = {
-    name = "Find",
+    name = "Find (Telescope)",
     f = { telescope_file_browser, "File browser" },
     z = {
       "<cmd>Telescope zoxide list<cr>",
@@ -143,6 +143,7 @@ wk.register({
     h = { '<cmd>lua require"telescope.builtin".help_tags()<CR>', "Find help" },
     s = { "<cmd>Telescope buffers theme=get_dropdown<CR>", "Find buffer" },
     w = { '<cmd>lua require"telescope.builtin".live_grep()<CR>', "Find word" },
+    b = { "<cmd>Telescope file_browser<CR>", "Browser" },
   },
   g = {
     name = "Git",
@@ -237,7 +238,7 @@ wk.register({
     t = { "<c-w>t", "Move to new tab" },
     ["="] = { "<c-w>=", "Equally size" },
     v = { "<cmd>:vsplit<cr>", "Verstical Split" },
-    w = {
+    p = {
       "<cmd>lua require('nvim-window').pick()<cr>",
       "Choose window to jump",
     },
