@@ -258,10 +258,10 @@ if packer then
       end,
     }
 
-    use { -- Easily see cursor movement
-      "edluffy/specs.nvim",
-      config = get_config "specs",
-    }
+    -- use { -- Easily see cursor movement
+    --   "edluffy/specs.nvim",
+    --   config = get_config "specs",
+    -- }
 
     --[[ Editing support ]]
     use { "numToStr/Comment.nvim", config = get_config "comment" } -- comment things easily
@@ -304,6 +304,7 @@ if packer then
     use {
       "nyngwang/NeoZoom.lua",
       branch = "neo-zoom-original", -- UNCOMMENT THIS, if you prefer the old one
+      cmd = "NeoZoomToggle",
       config = function()
         vim.api.nvim_set_keymap(
           "n",
@@ -311,6 +312,13 @@ if packer then
           "<cmd>NeoZoomToggle<CR>",
           { noremap = true, silent = true, nowait = true }
         )
+      end,
+    }
+
+    use {
+      "beauwilliams/focus.nvim",
+      config = function()
+        require("focus").setup { excluded_filetypes = { "toggleterm" } }
       end,
     }
 

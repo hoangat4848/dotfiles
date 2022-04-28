@@ -238,7 +238,9 @@ wk.register({
     d = { "<cmd>:q<cr>", "Close" },
     s = { "<cmd>:split<cr>", "Horizontal Split" },
     t = { "<c-w>t", "Move to new tab" },
-    ["="] = { "<c-w>=", "Equally size" },
+    -- ["="] = { "<c-w>=", "Equally size" },
+    ["="] = { "<cmd>FocusEqualise<CR>", "Equally size" },
+    f = { "<cmd>FocusToggle<CR>", "Toggle focus" },
     v = { "<cmd>:vsplit<cr>", "Verstical Split" },
     p = {
       "<cmd>lua require('nvim-window').pick()<cr>",
