@@ -141,6 +141,7 @@ wk.register({
     },
     o = { "<cmd>Telescope oldfiles<cr>", "Find recent files" },
     h = { '<cmd>lua require"telescope.builtin".help_tags()<CR>', "Find help" },
+    H = { "<cmd>Telescope highlights theme=get_dropdown<CR>", "Find highlights" },
     s = { "<cmd>Telescope buffers theme=get_dropdown<CR>", "Find buffer" },
     w = { '<cmd>lua require"telescope.builtin".live_grep()<CR>', "Find word" },
     b = { "<cmd>Telescope file_browser<CR>", "Browser" },
@@ -234,7 +235,7 @@ wk.register({
   w = {
     name = "Window",
     x = { "<c-w>x", "Swap" },
-    q = { "<cmd>:q<cr>", "Close" },
+    d = { "<cmd>:q<cr>", "Close" },
     s = { "<cmd>:split<cr>", "Horizontal Split" },
     t = { "<c-w>t", "Move to new tab" },
     ["="] = { "<c-w>=", "Equally size" },

@@ -60,6 +60,9 @@ fg_bg("TelescopePromptPrefix", colors.oniViolet, colors.sumiInk2)
 bg("TelescopeNormal", colors.sumiInk1b)
 
 fg_bg("TelescopePromptTitle", colors.sumiInk1, colors.oniViolet)
-fg_bg("TelescopePreviewTitle", colors.sumiInk1, colors.springGreen)
+fg_bg("TelescopePreviewTitle", colors.sumiInk1, colors.autumnRed)
 fg_bg("TelescopeResultsTitle", colors.sumiInk1b, colors.sumiInk1b)
--- bg("TelescopeSelection", black2)
+fg_bg("TelescopeSelection", colors.surimiOrange, colors.waveBlue1)
+
+-- ToggleTerm
+bg("ToggleTerm1NormalFloat", colors.sumiInk1)

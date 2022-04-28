@@ -51,15 +51,21 @@ nvim_tree.setup {
   hijack_cursor = true,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd = true,
-  -- show lsp diagnostics in the signcolumn
   filters = {
     dotfiles = false,
     custom = {},
     exclude = {},
   },
+  -- show lsp diagnostics in the signcolumn
   diagnostics = {
-    enabled = true,
-    icon = { hint = "", info = "", warning = "", error = "" },
+    enable = true,
+    show_on_dirs = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
   },
   git = { ignore = true },
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
@@ -87,7 +93,7 @@ nvim_tree.setup {
     change_dir = { enable = true, global = false },
     open_file = {
       quit_on_open = false,
-      resize_window = false,
+      resize_window = true,
       window_picker = {
         enable = true,
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
@@ -120,11 +126,9 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
     -- width of the window, can be either a number (columns) or a string in `%`
-    width = 30,
+    width = 35,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = "left",
-    -- if true the tree will resize itself after opening a file
-    auto_resize = false,
     mappings = {
       -- custom only false will merge the list with the default mappings
       -- if true, it will only use your list to set the mappings

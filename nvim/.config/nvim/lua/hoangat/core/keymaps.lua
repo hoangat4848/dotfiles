@@ -94,9 +94,9 @@ map("x", "K", ":move '<-2<CR>gv-gv")
 map("x", "<A-j>", ":move '>+1<CR>gv-gv")
 map("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
--- Yank and then move cursor back
-map("v", "y", "ygv")
-map("x", "y", "ygv")
+-- Yank and then return Normal mode
+map("v", "y", "y<ESC>")
+map("x", "y", "y<ESC>")
 
 --[[ Terminal ]]
 map("t", "<C-w>h", "<cmd>wincmd h<CR>")
