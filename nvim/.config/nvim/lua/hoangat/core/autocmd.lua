@@ -124,3 +124,10 @@ new_autocmd("BufWritePost", {
 
 -- Close nvim if NvimTree is only running buffer
 new_autocmd("BufEnter", { command = [[if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]] })
+
+vim.cmd [[
+augroup cmdline
+    autocmd!
+    autocmd CmdlineLeave : lua vim.defer_fn(function() vim.cmd('echo ""') end, 5000)
+augroup END
+]]
