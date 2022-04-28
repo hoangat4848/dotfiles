@@ -39,8 +39,7 @@ local modes = {
   ["V-LINE"] = "ԅ(≖‿≖ԅ) ",
   ["V-BLOCK"] = "ᕙ(ಥ﹏ಥ)7",
   COMMAND = " (⊙.☉)7 ",
-  REPLACE = "ლ(ಠ_ಠ ლ)"
-
+  REPLACE = "ლ(ಠ_ಠ ლ)",
 }
 
 local mode = {
@@ -87,8 +86,10 @@ lualine.setup {
     theme = vim.g.colors_name or "auto",
     -- section_separators = { left = "", right = "" },
     -- component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    component_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
+    -- component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    component_separators = { left = "", right = "" },
     -- disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
     disabled_filetypes = { "alpha", "dashboard" },
     always_divide_middle = true,
