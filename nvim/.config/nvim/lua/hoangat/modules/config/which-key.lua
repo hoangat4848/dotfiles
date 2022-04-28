@@ -144,6 +144,7 @@ wk.register({
     s = { "<cmd>Telescope buffers theme=get_dropdown<CR>", "Find buffer" },
     w = { '<cmd>lua require"telescope.builtin".live_grep()<CR>', "Find word" },
     b = { "<cmd>Telescope file_browser<CR>", "Browser" },
+    n = { "<cmd>Telescope notify<cr>", "Notifications" },
   },
   g = {
     name = "Git",

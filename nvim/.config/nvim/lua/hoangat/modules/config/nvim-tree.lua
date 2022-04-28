@@ -1,3 +1,8 @@
+local nvim_tree = safe_require "nvim-tree"
+if not nvim_tree then
+  return
+end
+
 local g = vim.g
 
 g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
@@ -31,7 +36,7 @@ g.nvim_tree_icons = {
   },
 }
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
-require("nvim-tree").setup {
+nvim_tree.setup {
   -- disables netrw completely
   disable_netrw = true,
   -- hijack netrw window on startup
@@ -46,9 +51,12 @@ require("nvim-tree").setup {
   hijack_cursor = true,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd = true,
-  -- this option hides files and folders starting with a dot `.`
-  hide_dotfiles = true,
   -- show lsp diagnostics in the signcolumn
+  filters = {
+    dotfiles = false,
+    custom = {},
+    exclude = {},
+  },
   diagnostics = {
     enabled = true,
     icon = { hint = "", info = "", warning = "", error = "" },
