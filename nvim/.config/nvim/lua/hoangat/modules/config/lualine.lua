@@ -84,6 +84,7 @@ lualine.setup {
   options = {
     icons_enabled = true,
     theme = vim.g.colors_name or "auto",
+    -- theme = "solarized_dark",
     -- section_separators = { left = "", right = "" },
     -- component_separators = { left = "", right = "" },
     -- section_separators = { left = "", right = "" },
@@ -116,7 +117,7 @@ lualine.setup {
         nvim_gps,
         cond = hide_in_width,
         -- color = { fg = "#859900" }  -- Solarized
-        color = { fg = "#D27E99" }, -- Solarized
+        color = { fg = "#D27E99" }, -- kanagawa
       },
     },
 

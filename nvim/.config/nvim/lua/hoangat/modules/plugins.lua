@@ -153,27 +153,38 @@ if packer then
 
     --[[ Appearance ]]
 
-    use { -- Colorschemes
-      --"Mofiqul/vscode.nvim",
-      "rose-pine/neovim",
-      as = "rose-pine",
-      tag = "v1.*",
-      config = get_config "colorscheme",
-    }
+    -- Colorscheme───────────────────────────────────────────────────────────
+    -- use {
+    --   --"Mofiqul/vscode.nvim",
+    --   "rose-pine/neovim",
+    --   as = "rose-pine",
+    --   tag = "v1.*",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use {
+    --   "shaunsingh/nord.nvim",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use {
+    --   "Mofiqul/vscode.nvim",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+    --
+    -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
-    use {
-      "shaunsingh/nord.nvim",
-      config = get_config "colorscheme",
-    }
+    use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
 
-    use {
-      "Mofiqul/vscode.nvim",
-      config = get_config "colorscheme",
-    }
-
-    use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
-
-    use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
+    -- use {
+    --   "kdheepak/monochrome.nvim",
+    --   config = function()
+    --     vim.cmd "colorscheme monochrome"
+    --   end,
+    -- }
+    -- ──────────────────────────────────────────────────────────────────────
 
     --Which key
     use { "folke/which-key.nvim", config = get_config "which-key" }

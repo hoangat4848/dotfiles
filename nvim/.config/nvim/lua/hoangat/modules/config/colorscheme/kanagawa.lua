@@ -66,3 +66,10 @@ fg_bg("TelescopeSelection", colors.surimiOrange, colors.waveBlue1)
 
 -- ToggleTerm
 bg("ToggleTerm1NormalFloat", colors.sumiInk1)
+
+-- HopNextKey
+vim.cmd [[
+  hi HopNextKey guifg = #FFA066 gui=bold
+  hi HopNextKey1 guifg = #FFA066 gui=bold
+  hi HopNextKey2 guifg = #FFA066 gui=bold
+]]
