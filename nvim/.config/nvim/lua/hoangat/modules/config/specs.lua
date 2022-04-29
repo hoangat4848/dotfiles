@@ -13,7 +13,7 @@ specs.setup {
     width = 10,
     winhl = "Cursor",
     fader = require("specs").linear_fader,
-    resizer = require("specs").shrink_resizer,
+    resizer = require("specs").slide_resizer,
   },
   ignore_filetypes = {},
   ignore_buftypes = {

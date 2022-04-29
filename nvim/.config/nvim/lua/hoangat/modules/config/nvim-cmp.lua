@@ -24,13 +24,13 @@ cmp.setup {
   },
   -- This is important
   sources = {
+    { name = "luasnip" },
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
-    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),

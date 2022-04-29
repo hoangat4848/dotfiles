@@ -50,6 +50,11 @@ if packer then
         { "mfussenegger/nvim-treehopper", config = get_config "nvim-treehopper" },
       },
     }
+
+    use { -- Moving between treesitter nodes
+      "ziontee113/syntax-tree-surfer",
+    }
+
     use { -- Lsp
       "neovim/nvim-lspconfig",
       config = get_config "lsp",
@@ -193,6 +198,14 @@ if packer then
       config = get_config "lualine",
     }
 
+    use { -- Show current scope in statusbar
+      "SmiteshP/nvim-gps",
+      requires = "nvim-treesitter/nvim-treesitter",
+      config = get_config "nvim-gps",
+    }
+
+    use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
+
     use { -- Bufferline
       "akinsho/bufferline.nvim",
       config = get_config "bufferline",
@@ -273,22 +286,15 @@ if packer then
       config = get_config "nvim-autopairs",
     }
 
-    use { "phaazon/hop.nvim", config = get_config "hop" } -- easymotion
+    use { -- Like Easymotion
+      "phaazon/hop.nvim",
+      config = get_config "hop",
+    }
 
-    use { -- Sneak
+    use { -- Like Sneak
       "rlane/pounce.nvim",
       config = get_config "pounce",
     }
-
-    use {
-      "SmiteshP/nvim-gps",
-      requires = "nvim-treesitter/nvim-treesitter",
-      config = get_config "nvim-gps",
-    }
-
-    use "ziontee113/syntax-tree-surfer"
-
-    use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
 
     use { -- Markdown
       "preservim/vim-markdown",
@@ -317,11 +323,18 @@ if packer then
 
     use {
       "beauwilliams/focus.nvim",
+      event = "WinNew",
       config = function()
-        require("focus").setup { excluded_filetypes = { "toggleterm" } }
+        require("focus").setup { excluded_filetypes = { "toggleterm" }, cursorline = false }
       end,
     }
 
-    --use({ "mizlan/iswap.nvim", config = get_config("iswap") })
+    --[[ Misc ]]
+    use {
+      "napmn/react-extract.nvim",
+      config = function()
+        require("react-extract").setup()
+      end,
+    }
   end)
 end

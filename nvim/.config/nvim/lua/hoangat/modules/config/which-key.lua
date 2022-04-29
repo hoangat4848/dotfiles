@@ -204,6 +204,7 @@ wk.register({
     p = { "<cmd>PackerSync<cr>", "PackerSync" },
     t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
     z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
+    e = { "require('react-extract').extract_to_new_file", "Extract react component" },
   },
   s = {
     name = "Search",

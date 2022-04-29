@@ -36,10 +36,10 @@ toggleterm.setup {
     -- width = <value>,
     -- height = <value>,
     winblend = 3,
-    highlights = {
-      border = "Normal",
-      background = "Normal",
-    },
+    -- highlights = {
+    --   border = "Normal",
+    --   background = "Normal",
+    -- },
   },
 }
 local Terminal = require("toggleterm.terminal").Terminal
