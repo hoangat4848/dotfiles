@@ -172,11 +172,11 @@ if packer then
     --   config = get_config "colorscheme",
     -- }
     --
-    -- use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+    use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
     --
     -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
-    use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
+    -- use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
 
     -- use {
     --   "kdheepak/monochrome.nvim",
