@@ -64,7 +64,7 @@ bufferline.setup {
     -- [focused and unfocused]. eg: { '|', '|' }
     separator_style = "thin",
     enforce_regular_tabs = false,
-    always_show_bufferline = false,
+    always_show_bufferline = true,
     sort_by = "id",
   },
 }

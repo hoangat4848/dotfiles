@@ -173,6 +173,7 @@ if packer then
     -- }
     --
     use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+
     --
     -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
@@ -287,6 +288,8 @@ if packer then
     --   config = get_config "specs",
     -- }
 
+    use { "danilamihailov/beacon.nvim", config = get_config "beacon" }
+
     --[[ Editing support ]]
     use { "numToStr/Comment.nvim", config = get_config "comment" } -- comment things easily
 
@@ -335,9 +338,7 @@ if packer then
     use {
       "beauwilliams/focus.nvim",
       event = "WinNew",
-      config = function()
-        require("focus").setup { excluded_filetypes = { "toggleterm" }, cursorline = false }
-      end,
+      config = get_config "focus",
     }
 
     --[[ Misc ]]

@@ -12,7 +12,6 @@ map("x", "<leader>", "<Nop>")
 --[[ NORMAL ]]
 
 map("n", "q:", "<Nop>")
-map("n", "<C-c>", "<Esc>")
 map("n", "<CR>", '{->v:hlsearch ? ":nohl\\<CR>" : "\\<CR>"}()', { expr = true })
 map("n", "x", '"_x')
 map("n", "X", '"_X')
@@ -210,3 +209,5 @@ vim.api.nvim_set_keymap(
 --[[ VIM EASY ALIGN ]]
 
 vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
+
+map("n", "<C-c>", "<cmd>Beacon<CR>")

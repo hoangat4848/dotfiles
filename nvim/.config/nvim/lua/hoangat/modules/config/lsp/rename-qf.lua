@@ -3,9 +3,17 @@
 -- populate qf list with changes (if multiple files modified)
 -- NOTE(vir): now using nvim-notify
 
+local function foreach(tbl, f)
+  local t = {}
+  for key, value in ipairs(tbl) do
+    t[key] = f(value)
+  end
+  return t
+end
+
 local function qf_populate(lines, mode)
   if mode == nil or type(mode) == "table" then
-    lines = core.foreach(lines, function(item)
+    lines = foreach(lines, function(item)
       return { filename = item, lnum = 1, col = 1, text = item }
     end)
     mode = "r"
