@@ -13,6 +13,7 @@ nix-env -iA \
 	nixpkgs.git \
 	nixpkgs.lazygit \
   nixpkgs.hub \
+  nixpkgs.delta \
 	nixpkgs.tmux \
 	nixpkgs.neovim \
 	nixpkgs.stow \
