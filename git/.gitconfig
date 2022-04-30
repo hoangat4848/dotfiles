@@ -2,6 +2,7 @@
 	excludesfile = ~/.gitignore
 	editor = nvim
 	ignorecase = false
+  pager = delta
 [push]
   default = simple
 [color]
@@ -58,3 +59,6 @@ name = hoangat4848
 	process = git-lfs filter-process
 [ghq]
   root = ~/.ghq
+[delta]
+  side-by-side = true
+  line-numbers = true

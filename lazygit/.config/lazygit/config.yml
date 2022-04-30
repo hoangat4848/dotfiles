@@ -15,8 +15,10 @@ gui:
       - magenta
     inactiveBorderColor:
       - yellow
-    # selectedLineBgColor:
-    #   - reverse
+    selectedLineBgColor:
+      - underline
+    selectedRangeBgColor:
+      - underline
     cherryPickedCommitBgColor:
       - cyan
     cherryPickedCommitFgColor:
@@ -34,3 +36,7 @@ gui:
   showBottomLine: true # for hiding the bottom information line (unless it has important information to tell you)
   showCommandLog: true
   commandLogSize: 8
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
