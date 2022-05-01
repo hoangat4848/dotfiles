@@ -69,7 +69,13 @@ bg("ToggleTerm1NormalFloat", colors.sumiInk1)
 
 -- HopNextKey
 vim.cmd [[
-  hi HopNextKey guifg = #FFA066 gui=bold
-  hi HopNextKey1 guifg = #FFA066 gui=bold
-  hi HopNextKey2 guifg = #FFA066 gui=bold
+  hi HopNextKey guifg = #E6C384 gui=bold
+  hi HopNextKey1 guifg = #E6C384 gui=bold
+  hi HopNextKey2 guifg = #E6C384 gui=bold
+
+
+  hi PounceMatch guifg=#1f1f28 guibg=#DCD7BA
+  hi PounceGap guifg=#1f1f28 guibg=#727169
+  hi PounceAccept guifg=#ffffff guibg=#2D4F67 gui=bold
+  hi PounceAcceptBest guifg=#ffffff guibg=#E82424 gui=bold
 ]]
