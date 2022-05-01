@@ -90,3 +90,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_zip = 1
+
+o.foldlevel = 99
+o.foldmethod = "syntax"
+-- foldmethod = "expr",
+o.foldexpr = "nvim_treesitter#foldexpr()"

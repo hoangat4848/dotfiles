@@ -346,5 +346,7 @@ if packer then
         require("react-extract").setup()
       end,
     }
+
+    use { "anuvyklack/pretty-fold.nvim", config = get_config "pretty-fold", requires = "anuvyklack/nvim-keymap-amend" }
   end)
 end

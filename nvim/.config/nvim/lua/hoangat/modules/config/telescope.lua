@@ -1,7 +1,29 @@
 local telescope = safe_require "telescope"
 local actions = require "telescope.actions"
 
+-- Fix folds not working when open file by telescope
+local telescope_actions = require "telescope.actions.set"
+local fixfolds = {
+  hidden = true,
+  attach_mappings = function(_)
+    telescope_actions.select:enhance {
+      post = function()
+        vim.cmd ":normal! zx zR"
+      end,
+    }
+    return true
+  end,
+}
+
 telescope.setup {
+  pickers = {
+    buffers = fixfolds,
+    find_files = fixfolds,
+    git_files = fixfolds,
+    grep_string = fixfolds,
+    live_grep = fixfolds,
+    oldfiles = fixfolds,
+  },
   defaults = {
     layout_config = {
       width = 0.75,
@@ -108,7 +130,6 @@ telescope.setup {
       },
     },
   },
-  pickers = {},
   extensions = {
     file_browser = {
       theme = "ivy",

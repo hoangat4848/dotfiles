@@ -79,7 +79,10 @@ new_autocmd("FileType", {
 -- Windows to close with "q".
 new_autocmd("FileType", {
   pattern = { "help", "startuptime", "qf", "lspinfo" },
-  command = [[nnoremap <buffer><silent> q :close<CR>]],
+  command = [[
+    nnoremap <buffer><silent> q :close<CR>
+    set nobuflisted
+  ]],
   group = ft_group,
 })
 
@@ -131,3 +134,16 @@ new_autocmd("BufEnter", { command = [[if winnr('$') == 1 && bufname() == 'NvimTr
 --     autocmd CmdlineLeave : lua vim.defer_fn(function() vim.cmd('echo ""') end, 5000)
 -- augroup END
 -- ]]
+
+local parsers = require "nvim-treesitter.parsers"
+local configs = parsers.get_parser_configs()
+local ft_str = table.concat(
+  vim.tbl_map(function(ft)
+    return configs[ft].filetype or ft
+  end, parsers.available_parsers()),
+  ","
+)
+
+vim.cmd(
+  "autocmd Filetype " .. ft_str .. " setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()"
+)
