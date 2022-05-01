@@ -5,7 +5,10 @@ if not bufferline then
   return
 end
 
+local highlights = require "rose-pine.plugins.bufferline" or {}
+
 bufferline.setup {
+  highlights = highlights,
   options = {
     numbers = "none",
     -- numbers = function(opts)
@@ -15,7 +18,7 @@ bufferline.setup {
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-    indicator_icon = "▎",
+    indicator_icon = "",
     buffer_close_icon = "",
     modified_icon = "●",
     close_icon = "",
@@ -62,7 +65,7 @@ bufferline.setup {
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "thin",
+    separator_style = "slant",
     enforce_regular_tabs = false,
     always_show_bufferline = true,
     sort_by = "id",

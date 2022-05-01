@@ -173,7 +173,8 @@ if packer then
     --   config = get_config "colorscheme",
     -- }
     --
-    use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+    -- use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+    use { "rose-pine/neovim", config = get_config "colorscheme" }
 
     --
     -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }

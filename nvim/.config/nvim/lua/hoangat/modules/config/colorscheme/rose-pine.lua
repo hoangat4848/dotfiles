@@ -3,7 +3,7 @@ require("rose-pine").setup {
   dark_variant = "main",
   bold_vert_split = false,
   dim_nc_background = false,
-  disable_background = false,
+  disable_background = true,
   disable_float_background = false,
   disable_italics = true,
   ---@usage string hex value or named color from rosepinetheme.com/palette
@@ -39,5 +39,4 @@ require("rose-pine").setup {
 
 -- set colorscheme after options
 vim.cmd "colorscheme rose-pine"
-
-vim.cmd "highlight Cursor guibg=#000000"
+vim.cmd "hi CursorLine guibg=#392435"

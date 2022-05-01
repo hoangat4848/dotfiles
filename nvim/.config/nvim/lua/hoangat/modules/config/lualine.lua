@@ -1,4 +1,4 @@
--- https://github.com/nvim-lualine/lualine.nvim
+-- https://gIthub.com/nvim-lualine/lualine.nvim
 
 local lualine = safe_require "lualine"
 if not lualine then
@@ -83,7 +83,8 @@ vim.opt.laststatus = 3
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = vim.g.colors_name or "auto",
+    -- theme = vim.g.colors_name or "auto",
+    theme = "rose-pine",
     -- theme = "solarized_dark",
     -- section_separators = { left = "", right = "" },
     -- component_separators = { left = "", right = "" },

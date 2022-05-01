@@ -6,7 +6,10 @@ end
 local map = vim.api.nvim_set_keymap
 local buf_map = vim.api.nvim_buf_set_keymap
 
+local highlights = require "rose-pine.plugins.toggleterm" or {}
+
 toggleterm.setup {
+  highlights = highlights,
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
