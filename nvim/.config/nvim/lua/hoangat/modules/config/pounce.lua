@@ -17,10 +17,6 @@ pounce.setup {
 }
 
 vim.cmd [[
-  hi PounceMatch guifg=#1f1f28 guibg=#DCD7BA
-  hi PounceGap guifg=#1f1f28 guibg=#727169
-  hi PounceAccept guifg=#1f1f28 guibg=#658594
-  hi PounceAcceptBest guifg=#1f1f28 guibg=#FF9E3B
 
   nmap s <cmd>Pounce<CR>
   nmap S <cmd>PounceRepeat<CR>
