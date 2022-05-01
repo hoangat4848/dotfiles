@@ -15,12 +15,13 @@ g.nvim_tree_symlink_arrow = " >> " --  defaults to ' ➛ '. used as a separator 
 g.nvim_tree_respect_buf_cwd = 1 -- 0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
 
 g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1, folder_arrows = 1 }
+
 g.nvim_tree_icons = {
   default = "",
   symlink = "",
   git = {
-    unstaged = "",
-    staged = "S",
+    unstaged = "✗",
+    staged = "✓",
     unmerged = "",
     renamed = "➜",
     deleted = "",

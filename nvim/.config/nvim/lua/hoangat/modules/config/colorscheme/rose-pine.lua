@@ -39,4 +39,7 @@ require("rose-pine").setup {
 
 -- set colorscheme after options
 vim.cmd "colorscheme rose-pine"
-vim.cmd "hi CursorLine guibg=#392435"
+vim.cmd [[
+  hi CursorLine guibg=#392435
+  hi Twilight guifg=#403d52 guibg=NONE
+]]

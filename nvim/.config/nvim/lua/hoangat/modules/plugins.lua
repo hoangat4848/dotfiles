@@ -307,9 +307,13 @@ if packer then
       config = get_config "hop",
     }
 
+    -- use { -- Like Sneak
+    --   "rlane/pounce.nvim",
+    --   config = get_config "pounce",
+    -- }
+
     use { -- Like Sneak
-      "rlane/pounce.nvim",
-      config = get_config "pounce",
+      "ggandor/lightspeed.nvim",
     }
 
     use { -- Markdown
