@@ -286,8 +286,8 @@ wk.register({
   },
   ["<leader>"] = {
     name = "Hop",
-    j = { "<cmd>HopLineAC<CR>", "Hop line below" },
-    k = { "<cmd>HopLineBC<CR>", "Hop line above" },
+    j = { "<cmd>HopLineStartAC<CR>", "Hop line below" },
+    k = { "<cmd>HopLineStartBC<CR>", "Hop line above" },
     h = { "<cmd>HopWordBC<CR>", "Hop word below" },
     l = { "<cmd>HopWordAC<CR>", "Hop word above" },
     ["/"] = { "<cmd>HopPattern<CR>", "Hop by pattern" },
