@@ -293,6 +293,16 @@ wk.register({
     l = { "<cmd>HopWordAC<CR>", "Hop word above" },
     ["/"] = { "<cmd>HopPattern<CR>", "Hop by pattern" },
   },
+  p = {
+    name = "Package(Node)",
+    s = { ":lua require('package-info').show()<CR>", "Show info" },
+    h = { ":lua require('package-info').hide()<CR>", "Hide version" },
+    u = { ":lua require('package-info').update()<CR>", "Update package on line" },
+    d = { ":lua require('package-info').delete()<CR>", "Delete package on line" },
+    i = { ":lua require('package-info').install()<CR>", "Install a new package" },
+    r = { ":lua require('package-info').reinstall()<CR>", "Reinstall dependencies" },
+    c = { ":lua require('package-info').change_version()<CR>", "Change version of package" },
+  },
 }, { prefix = "<leader>", mode = "n", default_options })
 
 if vim.lsp.buf_get_clients() then

@@ -350,6 +350,8 @@ if packer then
       end,
     }
 
+    use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim", config = get_config "package-info" }
+
     use { "anuvyklack/pretty-fold.nvim", config = get_config "pretty-fold", requires = "anuvyklack/nvim-keymap-amend" }
   end)
 end
