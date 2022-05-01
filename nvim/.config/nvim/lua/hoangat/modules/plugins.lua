@@ -116,8 +116,11 @@ if packer then
         "jvgrootveld/telescope-zoxide",
         { "ahmedkhalf/project.nvim", config = get_config "project" },
         "nvim-telescope/telescope-file-browser.nvim",
+        "nvim-telescope/telescope-node-modules.nvim",
       },
     }
+
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
     use { "ThePrimeagen/harpoon", config = get_config "harpoon" }
 

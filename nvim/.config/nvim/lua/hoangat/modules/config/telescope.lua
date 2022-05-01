@@ -145,7 +145,9 @@ telescope.setup {
   },
 }
 
+telescope.load_extension "fzf"
 telescope.load_extension "zoxide"
 telescope.load_extension "projects"
 telescope.load_extension "file_browser"
 telescope.load_extension "notify"
+telescope.load_extension "node_modules"

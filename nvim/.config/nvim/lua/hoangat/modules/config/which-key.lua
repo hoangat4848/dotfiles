@@ -146,6 +146,7 @@ wk.register({
     w = { '<cmd>lua require"telescope.builtin".live_grep()<CR>', "Find word" },
     b = { "<cmd>Telescope file_browser<CR>", "Browser" },
     n = { "<cmd>Telescope notify<cr>", "Notifications" },
+    p = { "<cmd>Telescope node_modules list<cr>", "Node modules list" },
   },
   g = {
     name = "Git",
