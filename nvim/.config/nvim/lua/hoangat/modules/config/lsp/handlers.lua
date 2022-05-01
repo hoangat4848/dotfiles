@@ -45,11 +45,11 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 
   if client.name == "sumneko_lua" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 
   require(CONFIG_PATH .. "lsp.lsp-keymaps").lsp_keymaps(bufnr)
@@ -88,12 +88,12 @@ M.capabilities = capabilities
 
 function M.enable_format_on_save()
   vim.cmd [[
-    augroup format_on_save
-      au!
-      au BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll
-      au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 2000)
-    augroup end
-  ]]
+          augroup format_on_save
+            au!
+            au BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll
+            au BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 2000 })
+          augroup end
+        ]]
 end
 
 function M.toggle_format_on_save()

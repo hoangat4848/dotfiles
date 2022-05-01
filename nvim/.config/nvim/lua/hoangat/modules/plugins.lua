@@ -79,8 +79,6 @@ if packer then
     --use({ -- Lsp
     --	"neovim/nvim-lspconfig",
     --	config = get_config("lsp"),
-    --	--config = "require 'hoangat.lsp'",
-    --	requires = {
     --		"williamboman/nvim-lsp-installer",
     --		"jose-elias-alvarez/null-ls.nvim", -- Formatter
     --		"b0o/schemastore.nvim", -- JSON schema for jsonls

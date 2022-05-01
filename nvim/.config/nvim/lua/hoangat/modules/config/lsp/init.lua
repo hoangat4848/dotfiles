@@ -1,7 +1,7 @@
 -- Check if lspconfig installed
-local lsp_config = safe_require("lspconfig")
+local lsp_config = safe_require "lspconfig"
 if not lsp_config then
-	return
+  return
 end
 
 require(CONFIG_PATH .. "lsp.lsp-installer-config")
