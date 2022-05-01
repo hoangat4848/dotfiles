@@ -6,7 +6,10 @@ end
 local map = vim.api.nvim_set_keymap
 local buf_map = vim.api.nvim_buf_set_keymap
 
-local highlights = require "rose-pine.plugins.toggleterm" or {}
+local highlights = {}
+if vim.g.colors_name == "rose-pine" then
+  highlights = require "rose-pine.plugins.toggleterm" or {}
+end
 
 toggleterm.setup {
   highlights = highlights,

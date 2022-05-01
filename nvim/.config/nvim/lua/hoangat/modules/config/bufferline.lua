@@ -4,8 +4,10 @@ local bufferline = safe_require "bufferline"
 if not bufferline then
   return
 end
-
-local highlights = require "rose-pine.plugins.bufferline" or {}
+local highlights = {}
+if vim.g.colors_name == "rose-pine" then
+  highlights = require "rose-pine.plugins.bufferline" or {}
+end
 
 bufferline.setup {
   highlights = highlights,

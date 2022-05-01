@@ -83,8 +83,8 @@ vim.opt.laststatus = 3
 lualine.setup {
   options = {
     icons_enabled = true,
-    -- theme = vim.g.colors_name or "auto",
-    theme = "rose-pine",
+    theme = vim.g.colors_name or "auto",
+    -- theme = "rose-pine",
     -- theme = "solarized_dark",
     -- section_separators = { left = "", right = "" },
     -- component_separators = { left = "", right = "" },

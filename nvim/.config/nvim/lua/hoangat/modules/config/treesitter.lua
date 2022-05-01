@@ -6,7 +6,7 @@ end
 local rainbow_colors = {
   ["rose-pine"] = { "#eb6f92", "#31748f", "#f6c177", "#ebbcba", "#9ccfd8", "#c4a7e7" },
   nord = { "#8fbcbb", "#88c0d0", "#81a1c1", "#5e81ac" },
-  solarized = { "#cdcdcd", "#b58900", "#d33682" },
+  solarized = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
 }
 
 treesitter.setup {
@@ -22,7 +22,8 @@ treesitter.setup {
   -- Extensions
   rainbow = {
     enable = true,
-    colors = rainbow_colors[vim.g.colors_name] or {}, -- table of hex strings
+    colors = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
+    -- colors = rainbow_colors[vim.g.colors_name] or {}, -- table of hex strings
     extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = 2000, -- Do not enable for files with more than n lines, int
     -- termcolors = {} -- table of colour name strings
