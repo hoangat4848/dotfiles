@@ -1,5 +1,8 @@
 -- Default options
 local nightfox = safe_require "nightfox"
+if not nightfox then
+  return
+end
 
 nightfox.setup {
   options = {
@@ -8,7 +11,7 @@ nightfox.setup {
     compile_file_suffix = "_compiled", -- Compiled file suffix
     transparent = false, -- Disable setting background
     terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-    dim_inactive = false, -- Non focused panes set to alternative background
+    dim_inactive = true, -- Non focused panes set to alternative background
     styles = { -- Style to be applied to different syntax groups
       comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
@@ -22,9 +25,9 @@ nightfox.setup {
       variables = "NONE",
     },
     inverse = { -- Inverse highlight for different types
-      match_paren = true,
-      visual = true,
-      search = true,
+      match_paren = false,
+      visual = false,
+      search = false,
     },
     modules = { -- List of various plugins and additional options
       -- ...
@@ -33,9 +36,4 @@ nightfox.setup {
 }
 
 -- setup must be called before loading
-vim.cmd "colorscheme nightfox"
-
-local haha = "haha"
-if haha then
-  return
-end
+vim.cmd "colorscheme duskfox"

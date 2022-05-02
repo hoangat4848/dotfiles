@@ -66,6 +66,7 @@ if packer then
         "RRethy/vim-illuminate",
         "simrat39/symbols-outline.nvim",
         "jose-elias-alvarez/nvim-lsp-ts-utils",
+        "nvim-lua/lsp-status.nvim",
         { "folke/trouble.nvim", config = get_config "lsp.trouble" }, -- A pretty list for showing diagnostics, references..
         -- {
         --   "tami5/lspsaga.nvim",
@@ -193,6 +194,11 @@ if packer then
       config = get_config "colorscheme",
     }
 
+    use {
+      "EdenEast/nightfox.nvim",
+      config = get_config "colorscheme",
+    }
+
     -- use {
     --   "kdheepak/monochrome.nvim",
     --   config = function()
@@ -247,10 +253,8 @@ if packer then
     }
 
     use { -- Dashboard
-      "goolord/alpha-nvim",
-      config = function()
-        require("alpha").setup(require("alpha.themes.dashboard").config)
-      end,
+      "glepnir/dashboard-nvim",
+      config = get_config "dashboard",
     }
 
     use { -- TODO comments highlight
