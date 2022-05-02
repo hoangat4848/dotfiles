@@ -239,6 +239,7 @@ wk.register({
     x = { "<c-w>x", "Swap" },
     -- d = { "<cmd>:q<cr>", "Close" },
     d = { "<c-w>q", "Close" },
+    a = { "<c-w>o", "Close other window" },
     s = { "<cmd>:split<cr>", "Horizontal Split" },
     t = { "<c-w>t", "Move to new tab" },
     -- ["="] = { "<c-w>=", "Equally size" },

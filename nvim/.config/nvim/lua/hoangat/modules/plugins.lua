@@ -174,7 +174,6 @@ if packer then
     --   config = get_config "colorscheme",
     -- }
     --
-    -- use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
     -- use { "rose-pine/neovim", config = get_config "colorscheme" }
 
     --
@@ -187,7 +186,9 @@ if packer then
     --     vim.cmd "colorscheme base16-solarized-dark"
     --   end,
     -- }
-    --
+
+    use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+
     use {
       "catppuccin/nvim",
       as = "catppuccin",

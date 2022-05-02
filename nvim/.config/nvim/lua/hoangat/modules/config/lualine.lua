@@ -56,6 +56,8 @@ local config = {
     component_separators = "",
     section_separators = "",
     theme = vim.g.colors_name or "auto",
+    disabled_filetypes = { "dashboard", "NvimTree" },
+    -- globalstatus = true,
     -- theme = {
     --   -- We are going to use lualine_c an lualine_x as left and
     --   -- right section. Both are highlighted by c theme .  So we
@@ -78,10 +80,15 @@ local config = {
     -- these are to remove the defaults
     lualine_a = {},
     lualine_b = {},
+    lualine_c = {
+      function()
+        return "%="
+      end,
+      "filename",
+    },
+    lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
   },
 }
 
@@ -144,7 +151,9 @@ ins_left {
 
 ins_left {
   "filename",
-  cond = conditions.buffer_not_empty,
+  path = 1,
+  shorting_target = 1000,
+  -- cond = conditions.buffer_not_empty,
   color = { gui = "bold" },
 }
 
@@ -156,11 +165,11 @@ ins_left {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   symbols = { error = " ", warn = " ", info = " " },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
+  -- diagnostics_color = {
+  --   color_error = { fg = colors.red },
+  --   color_warn = { fg = colors.yellow },
+  --   color_info = { fg = colors.cyan },
+  -- },
 }
 
 -- Insert mid section. You can make any number of sections in neovim :)
