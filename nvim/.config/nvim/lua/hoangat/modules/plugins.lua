@@ -177,9 +177,21 @@ if packer then
     -- use { "rose-pine/neovim", config = get_config "colorscheme" }
 
     --
-    use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
+    -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
     -- use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
+    -- use {
+    --   "RRethy/nvim-base16",
+    --   config = function()
+    --     vim.cmd "colorscheme base16-solarized-dark"
+    --   end,
+    -- }
+    --
+    use {
+      "catppuccin/nvim",
+      as = "catppuccin",
+      config = get_config "colorscheme",
+    }
 
     -- use {
     --   "kdheepak/monochrome.nvim",

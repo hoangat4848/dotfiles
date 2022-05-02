@@ -21,10 +21,10 @@ treesitter.setup {
   indent = { enable = true, disable = { "yaml" } },
   -- Extensions
   rainbow = {
-    enable = true,
+    enable = false,
     colors = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
     -- colors = rainbow_colors[vim.g.colors_name] or {}, -- table of hex strings
-    extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = 2000, -- Do not enable for files with more than n lines, int
     -- termcolors = {} -- table of colour name strings
   },

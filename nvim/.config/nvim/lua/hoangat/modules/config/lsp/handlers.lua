@@ -15,6 +15,7 @@ M.setup = function()
   vim.diagnostic.config {
     virtual_text = {
       severity = { min = vim.diagnostic.severity.WARN },
+      prefix = "",
     },
     signs = {
       active = signs,
