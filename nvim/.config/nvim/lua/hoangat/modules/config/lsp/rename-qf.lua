@@ -35,7 +35,7 @@ local function qf_rename()
   local position_params = vim.lsp.util.make_position_params()
   position_params.oldName = vim.fn.expand "<cword>"
 
-  vim.ui.input({ prompt = "﬌ ", default = position_params.oldName }, function(input)
+  vim.ui.input({ prompt = "Rename", default = position_params.oldName }, function(input)
     if input == nil then
       notify("[lsp] aborted rename", "warn", { render = "minimal" })
       return

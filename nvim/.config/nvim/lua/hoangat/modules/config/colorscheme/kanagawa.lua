@@ -67,6 +67,9 @@ fg_bg("TelescopeSelection", colors.surimiOrange, colors.waveBlue1)
 -- ToggleTerm
 bg("ToggleTerm1NormalFloat", colors.sumiInk1)
 
+-- Dashboard
+fg("DashboardHeader", colors.surimiOrange)
+
 -- HopNextKey
 vim.cmd [[
   hi HopNextKey guifg = #E6C384 gui=bold

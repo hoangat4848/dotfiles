@@ -375,5 +375,13 @@ if packer then
     use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim", config = get_config "package-info" }
 
     use { "anuvyklack/pretty-fold.nvim", config = get_config "pretty-fold", requires = "anuvyklack/nvim-keymap-amend" }
+
+    use { "stevearc/dressing.nvim", config = get_config "dressing" }
+
+    -- use {
+    --   "Shatur/neovim-session-manager",
+    --   requires = { "nvim-lua/plenary.nvim" },
+    --   config = get_config "session-manager",
+    -- }
   end)
 end
