@@ -45,20 +45,16 @@ M.setup = function()
 end
 
 M.on_attach = function(client, bufnr)
-  -- if client.name == "tsserver" then
-  --   client.resolved_capabilities.document_formatting = false
-  -- end
-  --
-  -- if client.name == "sumneko_lua" then
-  --   client.resolved_capabilities.document_formatting = false
-  -- end
-
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end
 
   if client.name == "sumneko_lua" then
     client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end
 
   require(CONFIG_PATH .. "lsp.lsp-keymaps").lsp_keymaps(bufnr)
@@ -70,10 +66,10 @@ M.on_attach = function(client, bufnr)
     lsp_signature.on_attach()
   end
 
-  local illuminate = safe_require "illuminate"
-  if illuminate then
-    illuminate.on_attach(client)
-  end
+  -- local illuminate = safe_require "illuminate"
+  -- if illuminate then
+  --   illuminate.on_attach(client)
+  -- end
 
   if client.name == "tsserver" then
     local ts_utils = safe_require "nvim-lsp-ts-utils"
@@ -100,7 +96,7 @@ function M.enable_format_on_save()
           augroup format_on_save
             au!
             au BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll
-            au BufWritePre * lua vim.lsp.buf.format({})
+            au BufWritePre * lua vim.lsp.buf.format({async = true})
           augroup end
         ]]
 end
