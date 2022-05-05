@@ -20,8 +20,8 @@ g.nvim_tree_icons = {
   default = "",
   symlink = "",
   git = {
-    unstaged = "✗",
-    staged = "✓",
+    unstaged = "",
+    staged = "S",
     unmerged = "",
     renamed = "➜",
     deleted = "",
@@ -60,7 +60,7 @@ nvim_tree.setup {
   -- show lsp diagnostics in the signcolumn
   diagnostics = {
     enable = true,
-    show_on_dirs = true,
+    show_on_dirs = false,
     icons = {
       hint = "",
       info = "",
@@ -68,7 +68,11 @@ nvim_tree.setup {
       error = "",
     },
   },
-  git = { ignore = true },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 400,
+  },
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature
@@ -114,7 +118,7 @@ nvim_tree.setup {
   },
   renderer = {
     indent_markers = {
-      enable = true,
+      enable = false,
       icons = {
         corner = "└ ",
         edge = "│ ",

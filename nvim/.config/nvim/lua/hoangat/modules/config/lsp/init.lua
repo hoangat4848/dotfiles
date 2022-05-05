@@ -9,4 +9,4 @@ require(CONFIG_PATH .. "lsp.rename-qf")
 require(CONFIG_PATH .. "lsp.handlers").setup() -- Diagnostic and keymap
 require(CONFIG_PATH .. "lsp.handlers").enable_format_on_save()
 require(CONFIG_PATH .. "lsp.null-ls").setup()
---require(CONFIG_PATH .. "lsp.trouble")
+require(CONFIG_PATH .. "lsp.trouble")

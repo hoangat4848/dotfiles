@@ -272,7 +272,7 @@ vim.g.dashboard_custom_section = {
     command = "Telescope oldfiles",
   },
   e = {
-    description = { "  Harpoon                      SPC h u" },
+    description = { "ﯠ  Harpoon                      SPC h u" },
     command = "lua require('harpoon.ui').toggle_quick_menu()",
   },
 }

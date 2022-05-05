@@ -42,4 +42,5 @@ vim.cmd "colorscheme rose-pine"
 vim.cmd [[
   hi CursorLine guibg=#392435
   hi Twilight guifg=#403d52 guibg=NONE
+  hi FocusedSymbol guibg=#eb6f92
 ]]

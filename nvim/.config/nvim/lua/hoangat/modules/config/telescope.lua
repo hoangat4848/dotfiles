@@ -17,7 +17,10 @@ local fixfolds = {
 
 telescope.setup {
   pickers = {
-    buffers = fixfolds,
+    buffers = vim.tbl_deep_extend("force", fixfolds, {
+      ignore_current_buffer = true,
+      sort_lastused = true,
+    }),
     find_files = fixfolds,
     git_files = fixfolds,
     grep_string = fixfolds,
