@@ -251,7 +251,7 @@ local headers = {
   },
 }
 
-vim.g.dashboard_custom_header = headers.great_wave
+vim.g.dashboard_custom_header = headers.luffy_gear5
 vim.g.dashboard_default_executive = "telescope"
 
 vim.g.dashboard_custom_section = {

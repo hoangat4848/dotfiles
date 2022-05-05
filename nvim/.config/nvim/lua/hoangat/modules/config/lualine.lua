@@ -57,7 +57,7 @@ local config = {
     section_separators = "",
     theme = vim.g.colors_name or "auto",
     disabled_filetypes = { "dashboard", "NvimTree" },
-    -- globalstatus = true,
+    globalstatus = true,
     -- theme = {
     --   -- We are going to use lualine_c an lualine_x as left and
     --   -- right section. Both are highlighted by c theme .  So we
