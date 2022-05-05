@@ -185,6 +185,16 @@ if packer then
     --     vim.cmd "colorscheme base16-solarized-dark"
     --   end,
     -- }
+    use {
+      "andersevenrud/nordic.nvim",
+      config = get_config "colorscheme",
+    }
+
+    use { "projekt0n/github-nvim-theme", config = get_config "colorscheme" }
+
+    use { "lourenci/github-colors", config = get_config "colorscheme" }
+
+    use { "lunarvim/darkplus.nvim", config = get_config "colorscheme" }
 
     use { "rose-pine/neovim", config = get_config "colorscheme" }
 
@@ -229,7 +239,7 @@ if packer then
 
     use { -- Statusbar
       "nvim-lualine/lualine.nvim",
-      config = get_config "lualine",
+      config = get_config "lualine-vscode",
     }
 
     use { -- Show current scope in statusbar

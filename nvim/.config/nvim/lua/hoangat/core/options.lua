@@ -43,7 +43,8 @@ o.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in millise
 o.updatetime = 300 -- faster completion (4000ms default)
 o.virtualedit = "block" -- Make visual block can select a rectangle block
 o.iskeyword = o.iskeyword + "-"
---o.whichwrap = "b,s,<,>,[,],h,l"
+o.fillchars.eob = " "
+o.whichwrap = "b,s,<,>,[,],h,l"
 
 -- -- Listchars
 -- vim.opt.list = true
