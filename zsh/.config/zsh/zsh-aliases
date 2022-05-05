@@ -33,6 +33,10 @@ alias s="git checkout stable"
 alias lg='lazygit'
 alias g='git'
 
+# docker
+alias d='docker'
+alias dsa='docker stop $(docker ps -a -q)'
+
 # Better 'ls'
 alias ls='ls -p -G'
 alias la='ls -A'
