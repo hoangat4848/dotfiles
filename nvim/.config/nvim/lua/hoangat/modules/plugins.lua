@@ -55,6 +55,17 @@ if packer then
       "ziontee113/syntax-tree-surfer",
     }
 
+    use { -- Show current context
+      "romgrk/nvim-treesitter-context",
+      config = get_config "treesitter-context",
+    }
+
+    use { -- Show current scope in statusbar
+      "SmiteshP/nvim-gps",
+      requires = "nvim-treesitter/nvim-treesitter",
+      config = get_config "nvim-gps",
+    }
+
     use { -- Lsp
       "neovim/nvim-lspconfig",
       config = get_config "lsp",
@@ -217,6 +228,30 @@ if packer then
     --     vim.cmd "colorscheme monochrome"
     --   end,
     -- }
+    use {
+      "xiyaowong/nvim-transparent",
+      config = function()
+        require("transparent").setup {
+          enable = true, -- boolean: enable transparent
+          extra_groups = { -- table/string: additional groups that should be cleared
+            -- In particular, when you set it to 'all', that means all available groups
+
+            -- example of akinsho/nvim-bufferline.lua
+            "FloatBorder",
+            "WinSeparator",
+            "TelescopeBorder",
+            "BufferLineTabClose",
+            "BufferlineBufferSelected",
+            "BufferLineFill",
+            "BufferLineBackground",
+            "BufferLineSeparator",
+            "BufferLineIndicatorSelected",
+          },
+          exclude = {}, -- table: groups you don't want to clear
+        }
+      end,
+    }
+
     -- ──────────────────────────────────────────────────────────────────────
 
     --Which key
@@ -240,12 +275,6 @@ if packer then
     use { -- Statusbar
       "nvim-lualine/lualine.nvim",
       config = get_config "lualine-vscode",
-    }
-
-    use { -- Show current scope in statusbar
-      "SmiteshP/nvim-gps",
-      requires = "nvim-treesitter/nvim-treesitter",
-      config = get_config "nvim-gps",
     }
 
     use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
