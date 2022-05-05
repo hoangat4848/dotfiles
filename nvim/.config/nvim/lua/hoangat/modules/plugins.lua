@@ -366,18 +366,34 @@ if packer then
     }
 
     --[[ Misc ]]
-    use {
+    use { -- Extract react component to different file
       "napmn/react-extract.nvim",
       config = function()
         require("react-extract").setup()
       end,
     }
 
-    use { "vuki656/package-info.nvim", requires = "MunifTanjim/nui.nvim", config = get_config "package-info" }
+    use { -- Working with node modules
+      "vuki656/package-info.nvim",
+      requires = "MunifTanjim/nui.nvim",
+      config = get_config "package-info",
+    }
 
-    use { "anuvyklack/pretty-fold.nvim", config = get_config "pretty-fold", requires = "anuvyklack/nvim-keymap-amend" }
+    use { -- Better looking fold
+      "anuvyklack/pretty-fold.nvim",
+      config = get_config "pretty-fold",
+      requires = "anuvyklack/nvim-keymap-amend",
+    }
 
-    use { "stevearc/dressing.nvim", config = get_config "dressing" }
+    use { -- Better looking UI for input and select
+      "stevearc/dressing.nvim",
+      config = get_config "dressing",
+    }
+
+    use { -- Generate annotation comment
+      "danymat/neogen",
+      config = get_config "neogen",
+    }
 
     -- use {
     --   "Shatur/neovim-session-manager",
