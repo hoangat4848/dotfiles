@@ -92,7 +92,12 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_zip = 1
 
-o.foldlevel = 99
-o.foldmethod = "syntax"
--- foldmethod = "expr",
+-- Fold settings
+-- o.foldmethod = "syntax"
+o.foldmethod = "expr"
 o.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldlevelstart = 99
+o.foldlevel = 99
+o.foldnestmax = 10 -- deepest fold is 10 levels
+o.foldenable = false -- don't fold by default
+o.foldlevel = 1
