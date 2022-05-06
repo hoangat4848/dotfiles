@@ -112,6 +112,7 @@ if packer then
         "onsails/lspkind-nvim", -- Enables icons on completions
         { -- Snippets
           "L3MON4D3/LuaSnip",
+          config = get_config "luasnip",
           requires = {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",

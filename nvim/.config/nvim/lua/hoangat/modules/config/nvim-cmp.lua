@@ -7,7 +7,7 @@ if not cmp or not luasnip or not lspkind then
 end
 
 -- Load vscode-like snippets
-require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
 
 local check_backspace = function() -- Helps SUPER TAB
   local col = vim.fn.col "." - 1
@@ -44,37 +44,37 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-        -- SUPER TAB behavior
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-
-        -- SUPER TAB behavior
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    -- ["<Tab>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item()
+    --     -- SUPER TAB behavior
+    --   elseif luasnip.expandable() then
+    --     luasnip.expand()
+    --   elseif luasnip.expand_or_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   elseif check_backspace() then
+    --     fallback()
+    --   else
+    --     fallback()
+    --   end
+    -- end, {
+    --   "i",
+    --   "s",
+    -- }),
+    -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item()
+    --
+    --     -- SUPER TAB behavior
+    --   elseif luasnip.jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, {
+    --   "i",
+    --   "s",
+    -- }),
   },
   formatting = {
     format = lspkind.cmp_format {
