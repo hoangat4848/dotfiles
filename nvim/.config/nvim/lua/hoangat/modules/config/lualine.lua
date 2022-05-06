@@ -114,32 +114,32 @@ ins_left {
   function()
     return ""
   end,
-  color = function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = "lualine_b_normal",
-      i = "lualine_b_insert",
-      v = "lualine_b_visual",
-      [""] = "lualine_b_visual",
-      V = "lualine_b_visual",
-      c = "lualine_b_command",
-      no = "lualine_b_command",
-      s = colors.orange,
-      S = colors.orange,
-      [""] = colors.orange,
-      ic = colors.yellow,
-      R = "lualine_b_replace",
-      Rv = "lualine_b_replace",
-      cv = "lualine_b_command",
-      ce = "lualine_b_command",
-      r = "lualine_b_replace",
-      rm = "lualine_b_replace",
-      ["r?"] = "lualine_b_replace",
-      ["!"] = "lualine_b_command",
-      t = "lualine_b_command",
-    }
-    return mode_color[vim.fn.mode()]
-  end,
+  -- color = function()
+  --   -- auto change color according to neovims mode
+  --   local mode_color = {
+  --     n = "lualine_b_normal",
+  --     i = "lualine_b_insert",
+  --     v = "lualine_b_visual",
+  --     [""] = "lualine_b_visual",
+  --     V = "lualine_b_visual",
+  --     c = "lualine_b_command",
+  --     no = "lualine_b_command",
+  --     s = colors.orange,
+  --     S = colors.orange,
+  --     [""] = colors.orange,
+  --     ic = colors.yellow,
+  --     R = "lualine_b_replace",
+  --     Rv = "lualine_b_replace",
+  --     cv = "lualine_b_command",
+  --     ce = "lualine_b_command",
+  --     r = "lualine_b_replace",
+  --     rm = "lualine_b_replace",
+  --     ["r?"] = "lualine_b_replace",
+  --     ["!"] = "lualine_b_command",
+  --     t = "lualine_b_command",
+  --   }
+  --   return mode_color[vim.fn.mode()]
+  -- end,
   padding = { right = 1 },
 }
 
