@@ -1,3 +1,4 @@
+require "hoangat.core.functions"
 local map = function(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, opts or { noremap = true, silent = true })
 end
@@ -25,10 +26,10 @@ map("n", "<S-Tab>", "<cmd>bp<CR>")
 map("n", "<space>x", "<cmd>bd<CR>")
 
 -- Window
-map("n", "<C-h>", "<cmd>wincmd h<CR>")
-map("n", "<C-j>", "<cmd>wincmd j<CR>")
-map("n", "<C-k>", "<cmd>wincmd k<CR>")
-map("n", "<C-l>", "<cmd>wincmd l<CR>")
+map("n", "<C-h>", "<Plug>WinMoveLeft")
+map("n", "<C-j>", "<Plug>WinMoveDown")
+map("n", "<C-k>", "<Plug>WinMoveUp")
+map("n", "<C-l>", "<Plug>WinMoveRight")
 map("n", "<Up>", "<cmd>wincmd -<CR>")
 map("n", "<Down>", "<cmd>wincmd +<CR>")
 map("n", "<Left>", "<cmd>wincmd <<CR>")

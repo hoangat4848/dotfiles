@@ -22,7 +22,7 @@ treesitter.setup {
   -- Extensions
   rainbow = {
     enable = false,
-    colors = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
+    -- colors = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
     -- colors = rainbow_colors[vim.g.colors_name] or {}, -- table of hex strings
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = 2000, -- Do not enable for files with more than n lines, int
@@ -57,6 +57,16 @@ treesitter.setup {
         ["ab"] = "@block.outer",
         ["ir"] = "@parameter.inner",
         ["ar"] = "@parameter.outer",
+      },
+    },
+
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
       },
     },
 

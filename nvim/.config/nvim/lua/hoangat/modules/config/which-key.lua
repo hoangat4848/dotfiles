@@ -100,7 +100,6 @@ local function telescope_file_browser()
   end
 end
 
-
 -- Register all leader based mappings
 wk.register({
   ["<Tab>"] = { "<cmd>e#<cr>", "Switch to previously opened buffer" },
@@ -147,7 +146,8 @@ wk.register({
     w = { '<cmd>lua require"telescope.builtin".live_grep()<CR>', "Find word" },
     b = { "<cmd>Telescope file_browser<CR>", "Browser" },
     n = { "<cmd>Telescope notify<cr>", "Notifications" },
-    p = { "<cmd>Telescope node_modules list<cr>", "Node modules list" },
+    p = { "<cmd>Telescope projects<cr>", "Find projects" },
+    P = { "<cmd>Telescope node_modules list<cr>", "Node modules list" },
   },
   g = {
     name = "Git",
