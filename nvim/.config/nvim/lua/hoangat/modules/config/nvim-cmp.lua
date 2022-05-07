@@ -101,9 +101,11 @@ cmp.setup {
     --   "s",
     -- }),
   },
+
   formatting = {
+    fields = { "kind", "abbr", "menu" },
     format = lspkind.cmp_format {
-      mode = "symbol_text", -- show only symbol annotations
+      mode = "symbol", -- show only symbol annotations -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
       preset = "codicons", -- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       symbol_map = {
@@ -163,3 +165,8 @@ cmp.setup.cmdline("/", { sources = { { name = "buffer" } } })
 cmp.setup.cmdline(":", {
   sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 })
+
+vim.cmd [[
+  hi CmpItemAbbrMatch gui=bold
+  hi CmpItemAbbrMatchFuzzy gui=bold
+]]
