@@ -115,7 +115,18 @@ new_autocmd({ "InsertLeave", "WinEnter" }, {
   command = "set cursorline",
   group = cursor_focus_group,
 })
-new_autocmd({ "InsertEnter", "WinLeave" }, { pattern = "*", command = "set nocursorline", group = cursor_focus_group })
+
+new_autocmd({ "InsertEnter", "WinLeave" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "NvimTree" then
+      return
+    end
+
+    vim.cmd "set nocursorline"
+  end,
+  group = cursor_focus_group,
+})
 
 -- Auto PackerSync when save plugins.lua file
 local packer_config_group = new_augroup("PackerAutoSync", { clear = true })
