@@ -27,10 +27,20 @@ local function border(hl_name)
   }
 end
 
+local cmp_window = require "cmp.utils.window"
+
+function cmp_window:has_scrollbar()
+  return false
+end
+
 cmp.setup {
+  -- window = {
+  --   completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+  --   documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+  -- },
   window = {
-    completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
-    documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+    completion = { border = border "LspDiagnosticsDefaultHint" },
+    documentation = { border = border "LspDiagnosticsDefaultHint" },
   },
   snippet = {
     expand = function(args)
