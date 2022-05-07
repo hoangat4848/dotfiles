@@ -1,4 +1,5 @@
 local ls = require "luasnip" --{{{
+local haha = 4
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/snippets/" }
@@ -47,8 +48,8 @@ end, { silent = true })
 -- 	end
 -- end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<A-O>", "<Esc>O", { silent = true })
-vim.keymap.set({ "i", "s" }, "<A-o>", "<Esc>o", { silent = true })
+vim.keymap.set({ "i", "s" }, "<c-O>", "<Esc>O", { silent = true })
+vim.keymap.set({ "i", "s" }, "<c-o>", "<Esc>o", { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<c-K>", function()
   if ls.jumpable(1) then
@@ -81,3 +82,5 @@ function name() end
 
 -- vim.keymap.set("n", "<Leader><CR>", "<cmd>LuaSnipEdit<cr>", { silent = true, noremap = true })
 -- vim.cmd [[autocmd BufEnter */snippets/*.lua nnoremap <silent> <buffer> <CR> /-- End Refactoring --<CR>O<Esc>O]]
+
+haha = "5"

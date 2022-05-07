@@ -14,9 +14,24 @@ local check_backspace = function() -- Helps SUPER TAB
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
--- find more here: https://www.nerdfonts.com/cheat-sheet
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
 
 cmp.setup {
+  window = {
+    completion = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+    documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -124,9 +139,6 @@ cmp.setup {
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
-  },
-  window = {
-    documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
   },
   experimental = {
     ghost_text = false,

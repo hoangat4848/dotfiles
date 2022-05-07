@@ -188,7 +188,7 @@ if packer then
     --
 
     --
-    -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
+    use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
     -- use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
     -- use {
@@ -223,35 +223,41 @@ if packer then
       config = get_config "colorscheme",
     }
 
+    use {
+      "tiagovla/tokyodark.nvim",
+      config = get_config "colorscheme",
+    }
+
     -- use {
     --   "kdheepak/monochrome.nvim",
     --   config = function()
     --     vim.cmd "colorscheme monochrome"
     --   end,
     -- }
-    -- use {
-    --   "xiyaowong/nvim-transparent",
-    --   config = function()
-    --     require("transparent").setup {
-    --       enable = true, -- boolean: enable transparent
-    --       extra_groups = { -- table/string: additional groups that should be cleared
-    --         -- In particular, when you set it to 'all', that means all available groups
-    --
-    --         -- example of akinsho/nvim-bufferline.lua
-    --         "FloatBorder",
-    --         "WinSeparator",
-    --         "TelescopeBorder",
-    --         "BufferLineTabClose",
-    --         "BufferlineBufferSelected",
-    --         "BufferLineFill",
-    --         "BufferLineBackground",
-    --         "BufferLineSeparator",
-    --         "BufferLineIndicatorSelected",
-    --       },
-    --       exclude = {}, -- table: groups you don't want to clear
-    --     }
-    --   end,
-    -- }
+    use {
+      "xiyaowong/nvim-transparent",
+      config = function()
+        require("transparent").setup {
+          enable = false, -- boolean: enable transparent
+          extra_groups = { -- table/string: additional groups that should be cleared
+            -- In particular, when you set it to 'all', that means all available groups
+
+            -- example of akinsho/nvim-bufferline.lua
+            "FloatBorder",
+            "WinSeparator",
+            "TelescopeBorder",
+            "BufferLineTabClose",
+            "BufferlineBufferSelected",
+            "BufferLineFill",
+            "BufferLineBackground",
+            "BufferLineSeparator",
+            "BufferLineIndicatorSelected",
+            "Twilight",
+          },
+          exclude = {}, -- table: groups you don't want to clear
+        }
+      end,
+    }
 
     -- ──────────────────────────────────────────────────────────────────────
 

@@ -23,7 +23,7 @@ indent_blankline.setup {
     "vista",
     "help",
     "todoist",
-    "NvimTree",
+    -- "NvimTree",
     "peekaboo",
     "git",
     "TelescopePrompt",
