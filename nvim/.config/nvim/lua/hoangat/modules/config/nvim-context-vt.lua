@@ -62,4 +62,3 @@ context_vt.setup {
   -- end,
 }
 
-vim.cmd "hi ContextVt gui=bold"

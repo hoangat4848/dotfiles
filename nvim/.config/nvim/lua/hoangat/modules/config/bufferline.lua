@@ -8,6 +8,26 @@ local highlights = {}
 if vim.g.colors_name == "rose-pine" then
   highlights = require "rose-pine.plugins.bufferline" or {}
 end
+--
+-- options = {
+--    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+--    buffer_close_icon = "",
+--    modified_icon = "",
+--    close_icon = "",
+--    show_close_icon = false,
+--    left_trunc_marker = "",
+--    right_trunc_marker = "",
+--    max_name_length = 14,
+--    max_prefix_length = 13,
+--    tab_size = 20,
+--    show_tab_indicators = true,
+--    enforce_regular_tabs = false,
+--    view = "multiwindow",
+--    show_buffer_close_icons = true,
+--    separator_style = "thin",
+--    always_show_bufferline = true,
+--    diagnostics = false,
+--    themable = true,
 
 bufferline.setup {
   highlights = highlights,
@@ -20,16 +40,25 @@ bufferline.setup {
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
-    indicator_icon = "",
-    buffer_close_icon = "",
-    modified_icon = "●",
-    close_icon = "",
+    buffer_close_icon = "",
+    modified_icon = "",
+    close_icon = "",
+    indicator_icon = "",
+    show_close_icon = false,
     left_trunc_marker = "",
     right_trunc_marker = "",
-    max_name_length = 18,
-    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-    tab_size = 18,
-    -- diagnostics = "nvim_lsp",
+    max_name_length = 14,
+    max_prefix_length = 13,
+    tab_size = 20,
+    show_tab_indicators = true,
+    enforce_regular_tabs = false,
+    view = "multiwindow",
+    show_buffer_close_icons = true,
+    separator_style = "thick",
+    always_show_bufferline = true,
+    themable = true,
+    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+    sort_by = "id",
     diagnostics = false,
     diagnostics_indicator = function(count, level)
       local icon = level:match "error" and " " or " "
@@ -60,16 +89,7 @@ bufferline.setup {
         padding = 1,
       },
     },
-    show_buffer_icons = true, -- disable filetype icons for buffers
-    show_buffer_close_icons = false,
-    show_close_icon = true,
-    show_tab_indicators = true,
-    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-    -- can also be a table containing 2 custom separators
-    -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "",
-    enforce_regular_tabs = false,
-    always_show_bufferline = true,
-    sort_by = "id",
   },
 }
+
+vim.cmd "hi BufferLineSeparator guifg=#11121d guibg=NONE"

@@ -224,3 +224,8 @@ map("i", "<C-e>", "<End>")
 map("i", "<C-a>", "<ESC>^i")
 
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
+
+map("n", "j", 'v:count == 0 ? "gj" : "j"', { expr = true })
+map("n", "k", 'v:count == 0 ? "gk" : "k"', { expr = true })
+map("n", "^", 'v:count == 0 ? "g^" :  "^"', { expr = true })
+map("n", "$", 'v:count == 0 ? "g$" : "$"', { expr = true })
