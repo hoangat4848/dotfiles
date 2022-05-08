@@ -66,6 +66,12 @@ if packer then
       config = get_config "nvim-gps",
     }
 
+    use { -- Virtual text for current context
+      "haringsrob/nvim_context_vt",
+      config = get_config "nvim-context-vt",
+    }
+    -- ──────────────────────────────────────────────────────────────────────
+
     use { -- Lsp
       "neovim/nvim-lspconfig",
       config = get_config "lsp",
