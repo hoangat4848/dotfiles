@@ -207,7 +207,7 @@ wk.register({
     t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
     z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
     e = { "require('react-extract').extract_to_new_file", "Extract react component" },
-    n = { "<cmd>set rnu!", "Toggle relative number" },
+    n = { "<cmd>set rnu!<CR>", "Toggle relative number" },
     s = { "<cmd>source %<CR>", "Source current buffer" },
   },
   s = {

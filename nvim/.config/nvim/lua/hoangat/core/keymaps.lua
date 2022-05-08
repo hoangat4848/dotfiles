@@ -217,3 +217,8 @@ map("n", "<C-c>", "<cmd> :%y+ <CR>") -- copy whole file content
 map("n", "<C-s>", "<cmd> :w <CR>") -- ctrl + s to save file
 map("n", "<S-t>", "<cmd> :enew <CR>") -- new buffer
 -- map("n", "<C-t>b", "<cmd> :tabnew <CR>") -- new tabs
+
+-- move cursor within insert mode
+
+map("i", "<C-e>", "<End>")
+map("i", "<C-a>", "<ESC>^i")
