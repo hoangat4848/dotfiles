@@ -131,7 +131,7 @@ wk.register({
       "Sort BufferLines automatically by extension",
     },
   },
-  e = { "<CMD>NvimTreeToggle<CR>", "File Explorer" },
+  e = { "<CMD>NvimTreeFocus<CR>", "File Explorer" },
   f = {
     name = "Find (Telescope)",
     f = { telescope_file_browser, "File browser" },
@@ -207,6 +207,8 @@ wk.register({
     t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
     z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
     e = { "require('react-extract').extract_to_new_file", "Extract react component" },
+    n = { "<cmd>set rnu!", "Toggle relative number" },
+    s = { "<cmd>source %<CR>", "Source current buffer" },
   },
   s = {
     name = "Search",

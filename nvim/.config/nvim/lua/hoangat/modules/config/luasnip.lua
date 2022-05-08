@@ -1,5 +1,4 @@
 local ls = require "luasnip" --{{{
-local haha = 4
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_lua").load { paths = "~/.config/nvim/snippets/" }
@@ -29,7 +28,6 @@ ls.config.set_config {
 
 -- Key Mapping --{{{
 
-vim.keymap.set({ "i", "s" }, "<c-s>", "<Esc>:w<cr>")
 vim.keymap.set({ "i", "s" }, "<c-u>", '<cmd>lua require("luasnip.extras.select_choice")()<cr><C-c><C-c>')
 
 vim.keymap.set({ "i", "s" }, "<A-p>", function()
@@ -47,9 +45,6 @@ end, { silent = true })
 -- 		ls.jump(-1)
 -- 	end
 -- end, { silent = true })
-
-vim.keymap.set({ "i", "s" }, "<c-O>", "<Esc>O", { silent = true })
-vim.keymap.set({ "i", "s" }, "<c-o>", "<Esc>o", { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<c-K>", function()
   if ls.jumpable(1) then
@@ -72,6 +67,7 @@ vim.keymap.set({ "i", "s" }, "<c-L>", function()
     print(time)
   end
 end)
+
 vim.keymap.set({ "i", "s" }, "<c-H>", function()
   if ls.choice_active() then
     ls.change_choice(-1)

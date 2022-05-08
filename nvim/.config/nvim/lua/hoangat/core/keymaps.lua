@@ -1,6 +1,7 @@
 require "hoangat.core.functions"
 local map = function(mode, lhs, rhs, opts)
-  vim.api.nvim_set_keymap(mode, lhs, rhs, opts or { noremap = true, silent = true })
+  vim.keymap.set(mode, lhs, rhs, opts or { silent = true })
+  -- vim.api.nvim_set_keymap(mode, lhs, rhs, opts or { noremap = true, silent = true })
 end
 
 vim.g.mapleader = " "
@@ -209,6 +210,10 @@ vim.api.nvim_set_keymap(
 
 --[[ VIM EASY ALIGN ]]
 
-vim.keymap.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
+map({ "n", "x" }, "ga", "<Plug>(EasyAlign)")
+map("n", "\\", "<cmd>Beacon<CR>")
 
-map("n", "<C-c>", "<cmd>Beacon<CR>")
+map("n", "<C-c>", "<cmd> :%y+ <CR>") -- copy whole file content
+map("n", "<C-s>", "<cmd> :w <CR>") -- ctrl + s to save file
+map("n", "<S-t>", "<cmd> :enew <CR>") -- new buffer
+-- map("n", "<C-t>b", "<cmd> :tabnew <CR>") -- new tabs
