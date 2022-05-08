@@ -222,3 +222,5 @@ map("n", "<S-t>", "<cmd> :enew <CR>") -- new buffer
 
 map("i", "<C-e>", "<End>")
 map("i", "<C-a>", "<ESC>^i")
+
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
