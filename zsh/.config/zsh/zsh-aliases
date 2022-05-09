@@ -43,6 +43,8 @@ alias la='ls -A'
 alias ll='exa -l -g --icons'
 alias lla='exa -l -g -a --icons'
 
+alias c='clear'
+
 # case "$(uname -s)" in
 #
 # Darwin)
