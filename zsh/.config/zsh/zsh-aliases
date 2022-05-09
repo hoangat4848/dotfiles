@@ -5,8 +5,8 @@
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 # alias nvim='~/nvim.appimage'
-alias vim='~/nvim.appimage'
-alias v='~/nvim.appimage'
+# alias vim='~/nvim.appimage'
+alias v='nvim'
 # alias vim='nvim'
 # alias v='nvim'
 alias ta='tmux attach'
