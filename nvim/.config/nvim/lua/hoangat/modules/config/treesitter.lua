@@ -10,7 +10,7 @@ local rainbow_colors = {
 }
 
 treesitter.setup {
-  ensure_installed = { "html", "lua", "typescript", "javascript" },
+  ensure_installed = { "html", "lua", "typescript", "javascript", "python", "json", "jsonc", "pug" },
   sync_install = true,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {

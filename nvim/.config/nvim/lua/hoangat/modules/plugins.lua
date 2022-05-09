@@ -94,17 +94,18 @@ if packer then
       },
     }
 
-    --use({ -- Lsp
-    --	"neovim/nvim-lspconfig",
-    --	config = get_config("lsp"),
-    --		"williamboman/nvim-lsp-installer",
-    --		"jose-elias-alvarez/null-ls.nvim", -- Formatter
-    --		"b0o/schemastore.nvim", -- JSON schema for jsonls
-    --		--"ray-x/lsp_signature.nvim",
-    --		--"RRethy/vim-illuminate",
-    --		--"jose-elias-alvarez/nvim-lsp-ts-utils",
-    --	},
-    --})
+    use {
+      "rmagatti/goto-preview",
+      config = function()
+        require("goto-preview").setup {}
+
+        vim.keymap.set("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+        vim.keymap.set("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
+        vim.keymap.set("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>")
+        -- Only set if you have telescope
+        vim.keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")
+      end,
+    }
 
     use { -- Autocompletion plugin
       "hrsh7th/nvim-cmp",
@@ -448,6 +449,20 @@ if packer then
     }
 
     use { "mustache/vim-mustache-handlebars" }
+
+    use {
+      "AckslD/nvim-trevJ.lua",
+      config = 'require("trevj").setup()',
+      -- optional call for configurating non-default filetypes etc
+      -- uncomment if you want to lazy load
+      module = "trevj",
+      -- an example for configuring a keybind, can also be done by filetype
+      setup = function()
+        vim.keymap.set("n", "<leader>j", function()
+          require("trevj").format_at_cursor()
+        end)
+      end,
+    }
 
     -- use {
     --   "Shatur/neovim-session-manager",
