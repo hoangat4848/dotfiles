@@ -127,7 +127,7 @@ treesitter.setup {
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.glimmer = {
   install_info = {
-    url = "~/tree-sitter-glimmer",
+    url = "~/treesitter/tree-sitter-glimmer",
     files = {
       "src/parser.c",
       "src/scanner.c",
@@ -138,4 +138,14 @@ parser_config.glimmer = {
     "handlebars",
     "html.handlebars",
   },
+}
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.ejs = {
+  install_info = {
+    url = "~/treesitter/tree-sitter-embedded-template",
+    files = { "src/parser.c" },
+    requires_generate_from_grammar = true,
+  },
+  filetype = "ejs",
 }

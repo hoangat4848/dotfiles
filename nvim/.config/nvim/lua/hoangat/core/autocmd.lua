@@ -38,6 +38,12 @@ new_autocmd({ "BufNewFile", "BufRead" }, {
   group = ft_group,
 })
 
+new_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.ejs",
+  command = "setl filetype=html",
+  group = ft_group,
+})
+
 -- Not showing statusbar on man files
 new_autocmd("FileType", {
   pattern = "man",

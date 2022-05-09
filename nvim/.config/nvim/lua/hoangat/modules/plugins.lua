@@ -447,6 +447,8 @@ if packer then
       config = get_config "neogen",
     }
 
+    use { "mustache/vim-mustache-handlebars" }
+
     -- use {
     --   "Shatur/neovim-session-manager",
     --   requires = { "nvim-lua/plenary.nvim" },
