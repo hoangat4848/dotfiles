@@ -48,6 +48,7 @@ if packer then
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-refactor",
         { "mfussenegger/nvim-treehopper", config = get_config "nvim-treehopper" },
+        "andymass/vim-matchup",
       },
     }
 
@@ -70,6 +71,7 @@ if packer then
       "haringsrob/nvim_context_vt",
       config = get_config "nvim-context-vt",
     }
+
     -- ──────────────────────────────────────────────────────────────────────
 
     use { -- Lsp
@@ -137,6 +139,7 @@ if packer then
         { "ahmedkhalf/project.nvim", config = get_config "project" },
         "nvim-telescope/telescope-file-browser.nvim",
         "nvim-telescope/telescope-node-modules.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
       },
     }
 
