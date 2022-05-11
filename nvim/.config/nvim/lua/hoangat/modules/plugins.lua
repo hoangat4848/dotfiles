@@ -284,6 +284,8 @@ if packer then
       config = get_config "nvim-colorizer",
     }
 
+    use { "Pocco81/HighStr.nvim", config = get_config "HightStr" }
+
     use { -- Indent guides
       "lukas-reineke/indent-blankline.nvim",
       config = get_config "indent-blankline",
@@ -451,7 +453,10 @@ if packer then
       config = get_config "neogen",
     }
 
-    use { "mustache/vim-mustache-handlebars" }
+    use { -- Handlebars filetype support
+      "mustache/vim-mustache-handlebars",
+      ft = { "hbs", "html.handlebars", "handlebars" },
+    }
 
     use {
       "AckslD/nvim-trevJ.lua",
