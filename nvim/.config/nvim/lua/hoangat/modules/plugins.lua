@@ -346,20 +346,20 @@ if packer then
 
     use { "folke/twilight.nvim", config = get_config "twilight" }
 
-    -- use { -- Smooth scrolling
-    --   "karb94/neoscroll.nvim",
-    --   config = get_config "neoscroll",
-    -- }
-
-    use { -- Another smooth scrolling.
-      "declancm/cinnamon.nvim",
-      config = function()
-        require("cinnamon").setup {
-          extra_keymaps = true,
-          scroll_limit = 100,
-        }
-      end,
+    use { -- Smooth scrolling
+      "karb94/neoscroll.nvim",
+      config = get_config "neoscroll",
     }
+
+    -- use { -- Another smooth scrolling.
+    --   "declancm/cinnamon.nvim",
+    --   config = function()
+    --     require("cinnamon").setup {
+    --       extra_keymaps = true,
+    --       scroll_limit = 100,
+    --     }
+    --   end,
+    -- }
 
     -- use { -- Easily see cursor movement
     --   "edluffy/specs.nvim",
@@ -469,6 +469,13 @@ if packer then
         vim.keymap.set("n", "<leader>j", function()
           require("trevj").format_at_cursor()
         end)
+      end,
+    }
+
+    use {
+      "henriquehbr/nvim-startup.lua",
+      config = function()
+        require("nvim-startup").setup()
       end,
     }
 
