@@ -21,9 +21,10 @@ create_if_needed_and_attach() {
     tmux new-session -Ad -s "$session_name"
 
     tmux rename-window -t "$session_name:1" "editor"
-    tmux send-keys -t "editor" "v" C-m
-    tmux splitw -h -p 35
+    tmux send-keys -t "editor" "nvim" C-m
+    tmux splitw -v -p 30
     tmux send-keys -t "editor" "exa --tree --level 1 -a -I=.git --git-ignore" C-m
+    tmux splitw -h -p 50
     tmux selectp -t 1
 
     tmux new-window -t "$session_name:2" -n "server"
