@@ -238,6 +238,11 @@ if packer then
       config = get_config "colorscheme",
     }
 
+    use {
+      "folke/tokyonight.nvim",
+      config = get_config "colorscheme",
+    }
+
     -- use {
     --   "kdheepak/monochrome.nvim",
     --   config = function()
