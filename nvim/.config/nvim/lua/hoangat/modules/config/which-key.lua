@@ -185,15 +185,15 @@ wk.register({
       "Open File 1",
     },
     ["2"] = {
-      "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
+      "<cmd>lua require('harpoon.ui').nav_file(2)<cr>",
       "Open File 2",
     },
     ["3"] = {
-      "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
+      "<cmd>lua require('harpoon.ui').nav_file(3)<cr>",
       "Open File 3",
     },
     ["4"] = {
-      "<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
+      "<cmd>lua require('harpoon.ui').nav_file(4)<cr>",
       "Open File 4",
     },
   },
