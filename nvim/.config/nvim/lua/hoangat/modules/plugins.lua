@@ -412,14 +412,6 @@ if packer then
       "nyngwang/NeoZoom.lua",
       branch = "neo-zoom-original", -- UNCOMMENT THIS, if you prefer the old one
       cmd = "NeoZoomToggle",
-      config = function()
-        vim.api.nvim_set_keymap(
-          "n",
-          "<leader><CR>",
-          "<cmd>NeoZoomToggle<CR>",
-          { noremap = true, silent = true, nowait = true }
-        )
-      end,
     }
 
     use {
@@ -474,13 +466,6 @@ if packer then
         vim.keymap.set("n", "<leader>j", function()
           require("trevj").format_at_cursor()
         end)
-      end,
-    }
-
-    use {
-      "henriquehbr/nvim-startup.lua",
-      config = function()
-        require("nvim-startup").setup()
       end,
     }
 

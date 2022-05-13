@@ -103,6 +103,7 @@ end
 -- Register all leader based mappings
 wk.register({
   ["<Tab>"] = { "<cmd>e#<cr>", "Switch to previously opened buffer" },
+  ["<CR>"] = { "<cmd>NeoZoomToggle<CR>" },
   b = {
     name = "Buffers",
     b = {
