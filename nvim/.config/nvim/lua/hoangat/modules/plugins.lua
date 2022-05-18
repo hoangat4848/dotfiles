@@ -178,26 +178,7 @@ if packer then
     --[[ Appearance ]]
 
     -- Colorscheme───────────────────────────────────────────────────────────
-    -- use {
-    --   --"Mofiqul/vscode.nvim",
-    --   "rose-pine/neovim",
-    --   as = "rose-pine",
-    --   tag = "v1.*",
-    --   config = get_config "colorscheme",
-    -- }
-    --
-    -- use {
-    --   "shaunsingh/nord.nvim",
-    --   config = get_config "colorscheme",
-    -- }
-    --
-    -- use {
-    --   "Mofiqul/vscode.nvim",
-    --   config = get_config "colorscheme",
-    -- }
-    --
 
-    --
     use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
     -- use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
@@ -207,6 +188,8 @@ if packer then
     --     vim.cmd "colorscheme base16-solarized-dark"
     --   end,
     -- }
+    use { "sainnhe/everforest", config = get_config "colorscheme" }
+
     use {
       "andersevenrud/nordic.nvim",
       config = get_config "colorscheme",

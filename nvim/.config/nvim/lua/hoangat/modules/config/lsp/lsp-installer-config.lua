@@ -4,7 +4,17 @@ if not lsp_installer then
   return
 end
 
-local servers = { "cssls", "html", "ember", "emmet_ls", "jsonls", "sumneko_lua", "tailwindcss", "tsserver", "eslint" }
+local servers = {
+  "cssls",
+  "html",
+  "ember",
+  "emmet_ls",
+  "jsonls",
+  "sumneko_lua",
+  "tailwindcss",
+  "tsserver",
+  "eslint",
+}
 
 -- Auto install needed servers
 for _, name in pairs(servers) do
