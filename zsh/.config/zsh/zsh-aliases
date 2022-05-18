@@ -45,6 +45,9 @@ alias lla='exa -l -g -a --icons'
 
 alias c='clear'
 
+mkcd(){ if [ ! -d "$@" ];then mkdir -p "$@" ;fi; cd "$@"; }
+
+
 # case "$(uname -s)" in
 #
 # Darwin)
