@@ -1,4 +1,5 @@
 require "hoangat.core.options"
+require "hoangat.core.nvchad"
 require "hoangat.core.keymaps"
 require "hoangat.core.utils"
 require "hoangat.modules.plugins"

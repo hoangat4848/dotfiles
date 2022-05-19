@@ -39,8 +39,8 @@ cmp.setup {
   --   documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
   -- },
   window = {
-    completion = { border = border "LspDiagnosticsDefaultHint" },
-    documentation = { border = border "LspDiagnosticsDefaultHint" },
+    completion = { border = border "CmpBorder" },
+    documentation = { border = border "CmpDocBorder" },
   },
   snippet = {
     expand = function(args)

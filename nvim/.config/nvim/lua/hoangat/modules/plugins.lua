@@ -174,12 +174,21 @@ if packer then
       cmd = "Neogit",
       config = get_config "neogit",
     }
-
     --[[ Appearance ]]
-
     -- Colorscheme───────────────────────────────────────────────────────────
+    -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
-    use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
+    use {
+      "NvChad/base46",
+      after = "packer.nvim",
+      config = function()
+        local ok, base46 = pcall(require, "base46")
+
+        if ok then
+          base46.load_theme()
+        end
+      end,
+    }
 
     -- use { "sainnhe/gruvbox-material", config = get_config "colorscheme" }
     -- use {
@@ -188,43 +197,43 @@ if packer then
     --     vim.cmd "colorscheme base16-solarized-dark"
     --   end,
     -- }
-    use { "sainnhe/everforest", config = get_config "colorscheme" }
-
-    use {
-      "andersevenrud/nordic.nvim",
-      config = get_config "colorscheme",
-    }
-
-    use { "projekt0n/github-nvim-theme", config = get_config "colorscheme" }
-
-    use { "lourenci/github-colors", config = get_config "colorscheme" }
-
-    use { "lunarvim/darkplus.nvim", config = get_config "colorscheme" }
-
-    use { "rose-pine/neovim", config = get_config "colorscheme" }
-
-    use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
-
-    use {
-      "catppuccin/nvim",
-      as = "catppuccin",
-      config = get_config "colorscheme",
-    }
-
-    use {
-      "EdenEast/nightfox.nvim",
-      config = get_config "colorscheme",
-    }
-
-    use {
-      "tiagovla/tokyodark.nvim",
-      config = get_config "colorscheme",
-    }
-
-    use {
-      "folke/tokyonight.nvim",
-      config = get_config "colorscheme",
-    }
+    -- use { "sainnhe/everforest", config = get_config "colorscheme" }
+    --
+    -- use {
+    --   "andersevenrud/nordic.nvim",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use { "projekt0n/github-nvim-theme", config = get_config "colorscheme" }
+    --
+    -- use { "lourenci/github-colors", config = get_config "colorscheme" }
+    --
+    -- use { "lunarvim/darkplus.nvim", config = get_config "colorscheme" }
+    --
+    -- use { "rose-pine/neovim", config = get_config "colorscheme" }
+    --
+    -- use { "rebelot/kanagawa.nvim", config = get_config "colorscheme" }
+    --
+    -- use {
+    --   "catppuccin/nvim",
+    --   as = "catppuccin",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use {
+    --   "EdenEast/nightfox.nvim",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use {
+    --   "tiagovla/tokyodark.nvim",
+    --   config = get_config "colorscheme",
+    -- }
+    --
+    -- use {
+    --   "folke/tokyonight.nvim",
+    --   config = get_config "colorscheme",
+    -- }
 
     -- use {
     --   "kdheepak/monochrome.nvim",
@@ -279,9 +288,15 @@ if packer then
       config = get_config "indent-blankline",
     }
 
+    -- use { -- Statusbar
+    --   "nvim-lualine/lualine.nvim",
+    --   config = get_config "lualine-vscode",
+    -- }
+
     use { -- Statusbar
-      "nvim-lualine/lualine.nvim",
-      config = get_config "lualine-vscode",
+      "feline-nvim/feline.nvim",
+      after = "nvim-web-devicons",
+      config = get_config "feline",
     }
 
     use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
@@ -297,6 +312,7 @@ if packer then
 
     use { -- Icons
       "kyazdani42/nvim-web-devicons",
+      after = "base46",
       config = get_config "nvim-web-devicons",
     }
 
