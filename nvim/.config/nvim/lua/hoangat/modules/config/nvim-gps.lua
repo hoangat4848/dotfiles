@@ -2,31 +2,32 @@ local gps = safe_require "nvim-gps"
 
 local icons = require "hoangat.core.icons"
 
--- Customized config
 gps.setup {
+
   disable_icons = false, -- Setting it to true will disable all icons
+
   icons = {
-    ["class-name"] = "" .. " ", -- Classes and class-like objects
-    ["function-name"] = "" .. " ", -- Functions
-    ["method-name"] = "" .. " ", -- Methods (functions inside class-like objects)
-    ["container-name"] = "" .. " ", -- Containers (example: lua tables)
-    ["tag-name"] = "" .. " ", -- Tags (example: html tags)
-    ["mapping-name"] = "" .. " ",
-    ["sequence-name"] = "" .. " ",
-    ["null-name"] = "" .. " ",
-    ["boolean-name"] = "蘒" .. " ",
-    ["integer-name"] = "" .. " ",
-    ["float-name"] = "" .. " ",
-    ["string-name"] = "" .. " ",
-    ["array-name"] = "" .. " ",
-    ["object-name"] = "" .. " ",
-    ["number-name"] = "" .. " ",
-    ["table-name"] = "" .. " ",
-    ["date-name"] = "" .. " ",
-    ["date-time-name"] = "" .. " ",
-    ["inline-table-name"] = "" .. " ",
-    ["time-name"] = "" .. " ",
-    ["module-name"] = "" .. " ",
+    ["class-name"] = "%#CmpItemKindClass#" .. icons.kind.Class .. "%*" .. " ", -- Classes and class-like objects
+    ["function-name"] = "%#CmpItemKindFunction#" .. icons.kind.Function .. "%*" .. " ", -- Functions
+    ["method-name"] = "%#CmpItemKindMethod#" .. icons.kind.Method .. "%*" .. " ", -- Methods (functions inside class-like objects)
+    ["container-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ", -- Containers (example: lua tables)
+    ["tag-name"] = "%#CmpItemKindKeyword#" .. icons.misc.Tag .. "%*" .. " ", -- Tags (example: html tags)
+    ["mapping-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+    ["sequence-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+    ["null-name"] = "%CmpItemKindField#" .. icons.kind.Field .. "%*" .. " ",
+    ["boolean-name"] = "%CmpItemKindValue#" .. icons.type.Boolean .. "%*" .. " ",
+    ["integer-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["float-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["string-name"] = "%CmpItemKindValue#" .. icons.type.String .. "%*" .. " ",
+    ["array-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+    ["object-name"] = "%CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+    ["number-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["table-name"] = "%CmpItemKindProperty#" .. icons.ui.Table .. "%*" .. " ",
+    ["date-name"] = "%CmpItemKindValue#" .. icons.ui.Calendar .. "%*" .. " ",
+    ["date-time-name"] = "%CmpItemKindValue#" .. icons.ui.Table .. "%*" .. " ",
+    ["inline-table-name"] = "%CmpItemKindProperty#" .. icons.ui.Calendar .. "%*" .. " ",
+    ["time-name"] = "%CmpItemKindValue#" .. icons.misc.Watch .. "%*" .. " ",
+    ["module-name"] = "%CmpItemKindModule#" .. icons.kind.Module .. "%*" .. " ",
   },
 
   -- Add custom configuration per language or
@@ -70,7 +71,7 @@ gps.setup {
   --}
   -- },
 
-  separator = "  ",
+  separator = " " .. icons.ui.ChevronRight .. " ",
 
   -- limit for amount of context shown
   -- 0 means no limit
@@ -80,4 +81,5 @@ gps.setup {
 
   -- indicator used when context is hits depth limit
   depth_limit_indicator = "..",
-}
+  text_hl = "LineNr",
+} -- Customized config

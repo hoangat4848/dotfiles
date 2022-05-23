@@ -3,11 +3,11 @@ if not treesitter then
   return
 end
 
-local rainbow_colors = {
-  ["rose-pine"] = { "#eb6f92", "#31748f", "#f6c177", "#ebbcba", "#9ccfd8", "#c4a7e7" },
-  nord = { "#8fbcbb", "#88c0d0", "#81a1c1", "#5e81ac" },
-  solarized = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
-}
+-- local rainbow_colors = {
+--   ["rose-pine"] = { "#eb6f92", "#31748f", "#f6c177", "#ebbcba", "#9ccfd8", "#c4a7e7" },
+--   nord = { "#8fbcbb", "#88c0d0", "#81a1c1", "#5e81ac" },
+--   solarized = { "#eee8d5", "#cb4b16", "#b58900", "#fdf6e3", "#2aa198", "#268bd2", "#6c71c4" },
+-- }
 
 treesitter.setup {
   ensure_installed = { "html", "lua", "typescript", "javascript", "python", "json", "jsonc", "pug" },

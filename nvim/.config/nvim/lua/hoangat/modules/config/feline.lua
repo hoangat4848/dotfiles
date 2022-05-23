@@ -188,16 +188,6 @@ options.diagnostic = {
   },
 }
 
-local gps = require "nvim-gps"
-options.gps = {
-  provider = function()
-    return gps.get_location()
-  end,
-  enabled = function()
-    return gps.is_available()
-  end,
-}
-
 options.lsp_progress = {
   provider = function()
     local Lsp = vim.lsp.util.get_progress_messages()[1]
@@ -378,7 +368,6 @@ add_table(options.left, options.diagnostic.hint)
 add_table(options.left, options.diagnostic.info)
 
 add_table(options.middle, options.lsp_progress)
-add_table(options.middle, options.gps)
 
 -- right
 add_table(options.right, options.lsp_icon)

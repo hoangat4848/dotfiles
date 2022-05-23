@@ -163,3 +163,35 @@ local ft_str = table.concat(
 
 vim.cmd("autocmd Filetype " .. ft_str .. " setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()")
 vim.cmd "autocmd ColorScheme * highlight WhichKeyFloat ctermbg=NONE ctermfg=NONE"
+
+vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost" }, {
+  callback = function()
+    local winbar_filetype_exclude = {
+      "help",
+      "startify",
+      "dashboard",
+      "packer",
+      "neogitstatus",
+      "NvimTree",
+      "Trouble",
+      "alpha",
+      "lir",
+      "Outline",
+      "spectre_panel",
+      "toggleterm",
+    }
+
+    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+      vim.opt_local.winbar = nil
+      return
+    end
+
+    local value = require(CONFIG_PATH .. "winbar").gps()
+
+    if value == nil then
+      value = require(CONFIG_PATH .. "winbar").filename()
+    end
+
+    vim.opt_local.winbar = value
+  end,
+})

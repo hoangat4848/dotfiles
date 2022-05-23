@@ -174,6 +174,9 @@ if packer then
       cmd = "Neogit",
       config = get_config "neogit",
     }
+
+    use { "tpope/vim-fugitive" }
+
     --[[ Appearance ]]
     -- Colorscheme───────────────────────────────────────────────────────────
     -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
@@ -355,16 +358,6 @@ if packer then
       config = get_config "neoscroll",
     }
 
-    -- use { -- Another smooth scrolling.
-    --   "declancm/cinnamon.nvim",
-    --   config = function()
-    --     require("cinnamon").setup {
-    --       extra_keymaps = true,
-    --       scroll_limit = 100,
-    --     }
-    --   end,
-    -- }
-
     -- use { -- Easily see cursor movement
     --   "edluffy/specs.nvim",
     --   config = get_config "specs",
@@ -413,11 +406,11 @@ if packer then
       cmd = "NeoZoomToggle",
     }
 
-    use {
-      "beauwilliams/focus.nvim",
-      event = "WinNew",
-      config = get_config "focus",
-    }
+    -- use {
+    --   "beauwilliams/focus.nvim",
+    --   event = "WinNew",
+    --   config = get_config "focus",
+    -- }
 
     --[[ Misc ]]
     use { -- Extract react component to different file
