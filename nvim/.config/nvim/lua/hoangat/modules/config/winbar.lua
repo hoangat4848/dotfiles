@@ -5,11 +5,9 @@ if not status_gps_ok then
   return
 end
 
-local function isempty(s)
-  return s == nil or s == ""
-end
+local isempty = require("hoangat.core.functions").isempty
 
-M.filename = function()
+local get_filename = function()
   local filename = vim.fn.expand "%:t"
   local extension = ""
   local file_icon = ""
@@ -37,35 +35,76 @@ M.filename = function()
       file_icon_color = default_file_icon_color
     end
 
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#Bold#" .. filename .. "%*"
+    -- return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
+    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. filename
   end
 end
 
-local icons = require "hoangat.core.icons"
-
-M.gps = function()
+local get_gps = function()
   local status_ok, gps_location = pcall(gps.get_location, {})
   if not status_ok then
-    return
+    return ""
   end
 
-  -- local icons = require "user.icons"
+  local icons = require "hoangat.core.icons"
 
   if not gps.is_available() then -- Returns boolean value indicating whether a output can be provided
-    return
+    return ""
   end
-
-  local retval = M.filename()
 
   if gps_location == "error" then
     return ""
   else
     if not isempty(gps_location) then
-      return retval .. " " .. icons.ui.ChevronRight .. " " .. gps_location
+      return " " .. icons.ui.ChevronRight .. " " .. gps_location
     else
-      return retval
+      return ""
     end
   end
+end
+
+local excludes = function()
+  local winbar_filetype_exclude = {
+    "help",
+    "startify",
+    "dashboard",
+    "packer",
+    "neogitstatus",
+    "NvimTree",
+    "Trouble",
+    "alpha",
+    "lir",
+    "Outline",
+    "spectre_panel",
+    "toggleterm",
+  }
+
+  if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+    vim.opt_local.winbar = nil
+    return true
+  end
+
+  return false
+end
+
+M.get_winbar = function()
+  if excludes() then
+    return
+  end
+  local funcs = require "hoangat.core.functions"
+  local value = get_filename()
+
+  if not funcs.isempty(value) then
+    local gps_value = get_gps()
+    value = value .. gps_value
+  end
+
+  if not funcs.isempty(value) and funcs.get_buf_option "mod" then
+    local mod = require("hoangat.core.icons").ui.Circle
+    value = value .. " " .. "%#LineNr#" .. mod .. "%*"
+  end
+
+  vim.opt_local.winbar = value
 end
 
 return M
