@@ -66,10 +66,10 @@ M.on_attach = function(client, bufnr)
     lsp_signature.on_attach()
   end
 
-  -- local illuminate = safe_require "illuminate"
-  -- if illuminate then
-  --   illuminate.on_attach(client)
-  -- end
+  local illuminate = safe_require "illuminate"
+  if illuminate then
+    illuminate.on_attach(client)
+  end
 
   if client.name == "tsserver" then
     local ts_utils = safe_require "nvim-lsp-ts-utils"

@@ -578,7 +578,7 @@ local random_headers = {
 local randomNumber = math.random(4)
 randomNumber = math.random(4)
 
-vim.g.dashboard_custom_header = headers.oni_mask_4
+vim.g.dashboard_custom_header = headers.saitama
 vim.g.dashboard_default_executive = "telescope"
 
 vim.g.dashboard_custom_section = {

@@ -77,6 +77,7 @@ local excludes = function()
     "Outline",
     "spectre_panel",
     "toggleterm",
+    "harpoon",
   }
 
   if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then

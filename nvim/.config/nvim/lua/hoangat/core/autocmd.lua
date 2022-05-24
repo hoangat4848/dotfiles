@@ -164,6 +164,12 @@ local ft_str = table.concat(
 vim.cmd("autocmd Filetype " .. ft_str .. " setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()")
 vim.cmd "autocmd ColorScheme * highlight WhichKeyFloat ctermbg=NONE ctermfg=NONE"
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function()
+    vim.cmd "hi link illuminatedWord LspReferenceText"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost" }, {
   callback = function()
     require("hoangat.modules.config.winbar").get_winbar()

@@ -145,7 +145,10 @@ if packer then
 
     -- use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
-    use { "ThePrimeagen/harpoon", config = get_config "harpoon" }
+    use {
+      "ThePrimeagen/harpoon",
+      config = get_config "harpoon",
+    }
 
     -- ============================================================================
 

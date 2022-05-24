@@ -6,11 +6,31 @@ nvchad.load_config = function()
   local conf = {
     ui = {
       hl_override = {
-        CursorLine = {
-          bg = "one_bg",
-        },
+        -- CursorLine = {
+        --   bg = "one_bg",
+        -- },
         LspReferenceText = {
-          bg = "one_bg",
+          bg = "one_bg2",
+          fg = "none",
+        },
+        LspReferenceWrite = {
+          bg = "one_bg2",
+          fg = "none",
+        },
+        LspReferenceRead = {
+          bg = "one_bg2",
+          fg = "none",
+        },
+        FloatBorder = {
+          fg = "darker_black",
+          bg = "darker_black",
+        },
+        HarpoonBorder = {
+          fg = "darker_black",
+          bg = "darker_black",
+        },
+        HarpoonWindow = {
+          bg = "darker_black",
         },
       },
       changed_themes = {},
