@@ -131,6 +131,10 @@ wk.register({
       "<cmd>BufferLineSortByExtension<cr>",
       "Sort BufferLines automatically by extension",
     },
+    j = {
+      "<cmd>JABSOpen<CR>",
+      "Open JABS",
+    },
   },
   e = { "<CMD>NvimTreeFocus<CR>", "File Explorer" },
   f = {

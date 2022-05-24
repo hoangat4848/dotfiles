@@ -279,6 +279,12 @@ if packer then
       config = get_config "nvim-tree",
     }
 
+    use {
+      "matbme/JABS.nvim",
+      config = get_config "jabs",
+      requires = { "kyazdani42/nvim-web-devicons" },
+    }
+
     use { -- Colorizer
       "norcalli/nvim-colorizer.lua",
       config = get_config "nvim-colorizer",
