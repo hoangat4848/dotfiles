@@ -104,6 +104,9 @@ end
 wk.register({
   ["<Tab>"] = { "<cmd>e#<cr>", "Switch to previously opened buffer" },
   ["<CR>"] = { "<cmd>NeoZoomToggle<CR>" },
+  e = { "<CMD>NvimTreeToggle<CR>", "File Explorer" },
+  q = { '<cmd>lua require("hoangat.core.functions").smart_quit()<CR>', "Quit" },
+
   b = {
     name = "Buffers",
     b = {
@@ -136,7 +139,6 @@ wk.register({
       "Open JABS",
     },
   },
-  e = { "<CMD>NvimTreeFocus<CR>", "File Explorer" },
   f = {
     name = "Find (Telescope)",
     f = { telescope_file_browser, "File browser" },
@@ -209,9 +211,9 @@ wk.register({
     },
     l = { "<cmd>source ~/.config/nvim/snippets/*<cr>", "Reload snippets" },
     p = { "<cmd>PackerSync<cr>", "PackerSync" },
-    t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
+    -- t = { "<cmd>FloatermNew --autoclose=2<cr>", "New Floaterm" },
+    t = { ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", "Toggle bufferline" },
     z = { "<cmd>ZenMode<cr>", "Toggle ZenMode" },
-    e = { "require('react-extract').extract_to_new_file", "Extract react component" },
     n = { "<cmd>set rnu!<CR>", "Toggle relative number" },
     s = { "<cmd>source %<CR>", "Source current buffer" },
   },

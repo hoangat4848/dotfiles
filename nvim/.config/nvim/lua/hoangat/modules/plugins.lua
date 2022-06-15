@@ -37,6 +37,12 @@ if packer then
       config = get_config "impatient",
     }
 
+    use {
+      "goolord/alpha-nvim",
+      after = "base46",
+      config = get_config "alpha",
+    }
+
     use { -- Treesiter
       "nvim-treesitter/nvim-treesitter",
       config = get_config "treesitter",
@@ -47,14 +53,13 @@ if packer then
         "JoosepAlviste/nvim-ts-context-commentstring",
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-refactor",
-        { "mfussenegger/nvim-treehopper", config = get_config "nvim-treehopper" },
+        -- { "mfussenegger/nvim-treehopper", config = get_config "nvim-treehopper" },
+        { "hoangat4848/nvim-treehopper", config = get_config "nvim-treehopper" },
         "andymass/vim-matchup",
       },
     }
 
-    use { -- Moving between treesitter nodes
-      "ziontee113/syntax-tree-surfer",
-    }
+    use "ziontee113/syntax-tree-surfer" -- Moving between treesitter nodes
 
     use { -- Show current context
       "romgrk/nvim-treesitter-context",
@@ -69,6 +74,7 @@ if packer then
 
     use { -- Virtual text for current context
       "haringsrob/nvim_context_vt",
+      after = "base46",
       config = get_config "nvim-context-vt",
     }
 
@@ -87,12 +93,12 @@ if packer then
         "jose-elias-alvarez/nvim-lsp-ts-utils",
         "nvim-lua/lsp-status.nvim",
         { "folke/trouble.nvim", config = get_config "lsp.trouble" }, -- A pretty list for showing diagnostics, references..
-        -- {
-        --   "tami5/lspsaga.nvim",
-        --   config = function()
-        --     require "lspsaga"
-        --   end,
-        -- },
+        {
+          "tami5/lspsaga.nvim",
+          config = function()
+            require "lspsaga"
+          end,
+        },
       },
     }
 
@@ -104,7 +110,7 @@ if packer then
         vim.keymap.set("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
         vim.keymap.set("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
         vim.keymap.set("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>")
-        -- Only set if you have telescope
+        -- Only set if you have telescopeplugins
         vim.keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")
       end,
     }
@@ -130,11 +136,13 @@ if packer then
       },
     }
 
+    use { "nvim-lua/plenary.nvim" }
+
     use { -- Telescope
       "nvim-telescope/telescope.nvim",
       config = get_config "telescope",
       requires = {
-        "nvim-lua/plenary.nvim",
+        -- "nvim-lua/plenary.nvim",
         "jvgrootveld/telescope-zoxide",
         { "ahmedkhalf/project.nvim", config = get_config "project" },
         "nvim-telescope/telescope-file-browser.nvim",
@@ -180,18 +188,29 @@ if packer then
 
     use { "tpope/vim-fugitive" }
 
+    use {
+      "akinsho/git-conflict.nvim",
+      config = function()
+        require("git-conflict").setup()
+      end,
+    }
+
     --[[ Appearance ]]
     -- Colorscheme───────────────────────────────────────────────────────────
     -- use { "ishan9299/nvim-solarized-lua", config = get_config "colorscheme" }
 
     use {
       "NvChad/base46",
-      after = "packer.nvim",
+      -- commit = "6689ebc11e658f5094fe40f12d492e8f568a166f",
+      commit = "674d6bb3c41ec3c0068e7d94b21596133b15998f",
+      after = "plenary.nvim",
       config = function()
         local ok, base46 = pcall(require, "base46")
 
         if ok then
           base46.load_theme()
+        else
+          print(base46)
         end
       end,
     }
@@ -280,6 +299,7 @@ if packer then
     use { -- Nvim Tree
       "kyazdani42/nvim-tree.lua",
       config = get_config "nvim-tree",
+      after = "nvim-web-devicons",
     }
 
     use {
@@ -305,11 +325,11 @@ if packer then
     --   config = get_config "lualine-vscode",
     -- }
 
-    use { -- Statusbar
-      "feline-nvim/feline.nvim",
-      after = "nvim-web-devicons",
-      config = get_config "feline",
-    }
+    -- use { -- Statusbar
+    --   "feline-nvim/feline.nvim",
+    --   after = "nvim-web-devicons",
+    --   config = get_config "feline",
+    -- }
 
     use { "akinsho/toggleterm.nvim", config = get_config "toggleterm" }
 
@@ -328,10 +348,10 @@ if packer then
       config = get_config "nvim-web-devicons",
     }
 
-    use { -- Dashboard
-      "glepnir/dashboard-nvim",
-      config = get_config "dashboard",
-    }
+    -- use { -- Dashboard
+    --   "glepnir/dashboard-nvim",
+    --   config = get_config "dashboard",
+    -- }
 
     use { -- TODO comments highlight
       "folke/todo-comments.nvim",
@@ -396,7 +416,27 @@ if packer then
 
     use { -- Like Sneak
       "ggandor/lightspeed.nvim",
+      config = get_config "lightspeed",
     }
+
+    -- use { -- Like sneak
+    --   "ggandor/leap.nvim",
+    --   config = function()
+    --     require("leap").setup {
+    --       case_insensitive = true,
+    --       -- These keys are captured directly by the plugin at runtime.
+    --       special_keys = {
+    --         repeat_search = "<enter>",
+    --         next_match = "<enter>",
+    --         prev_match = "<tab>",
+    --         next_group = "<space>",
+    --         prev_group = "<tab>",
+    --         eol = "<space>",
+    --       },
+    --     }
+    --     require("leap").set_default_keymaps()
+    --   end,
+    -- }
 
     use { -- Markdown
       "preservim/vim-markdown",
@@ -426,6 +466,8 @@ if packer then
       "napmn/react-extract.nvim",
       config = function()
         require("react-extract").setup()
+        vim.keymap.set({ "v" }, "<Leader>re", require("react-extract").extract_to_new_file)
+        vim.keymap.set({ "v" }, "<Leader>rc", require("react-extract").extract_to_current_file)
       end,
     }
 
@@ -469,6 +511,12 @@ if packer then
         end)
       end,
     }
+
+    use { "mattn/emmet-vim" }
+
+    use { "mg979/vim-visual-multi" }
+
+    use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
 
     -- use {
     --   "Shatur/neovim-session-manager",

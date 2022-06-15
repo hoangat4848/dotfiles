@@ -13,7 +13,7 @@ local servers = {
   "sumneko_lua",
   "tailwindcss",
   "tsserver",
-  "eslint",
+  -- "eslint",
 }
 
 -- Auto install needed servers

@@ -5,7 +5,8 @@ end
 
 context_vt.setup {
   enabled = true,
-  prefix = "✨",
+  prefix = "",
+  -- prefix = "✨",
   highlight = "ContextVt", -- default: ContextVt
   disable_ft = { "markdown" },
 
@@ -19,7 +20,7 @@ context_vt.setup {
 
   -- How many lines required after starting position to show virtual text
   -- Default: 1 (equals two lines total)
-  min_rows = 2,
+  min_rows = 5,
 
   -- Same as above but only for spesific filetypes
   -- Default: {}
@@ -61,4 +62,3 @@ context_vt.setup {
   --   return nodes[#nodes]
   -- end,
 }
-

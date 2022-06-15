@@ -18,7 +18,7 @@ map("n", "<CR>", '{->v:hlsearch ? ":nohl\\<CR>" : "\\<CR>"}()', { expr = true })
 map("n", "x", '"_x')
 map("n", "X", '"_X')
 map("n", "<C-s>", "<cmd>w<CR>")
-map("n", "<leader>E", "<CMD>e ~/.config/nvim/init.lua<cr>")
+-- map("n", "<leader>E", "<CMD>e ~/.config/nvim/init.lua<cr>")
 map("n", "<F9>", '<cmd>lua require"core.compiler".compile_and_run()<CR>')
 
 -- Buffer
@@ -223,7 +223,7 @@ map("n", "<S-t>", "<cmd> :enew <CR>") -- new buffer
 map("i", "<C-e>", "<End>")
 map("i", "<C-a>", "<ESC>^i")
 
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
 map("n", "j", 'v:count == 0 ? "gj" : "j"', { expr = true })
 map("n", "k", 'v:count == 0 ? "gk" : "k"', { expr = true })

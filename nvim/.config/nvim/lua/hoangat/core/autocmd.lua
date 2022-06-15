@@ -163,6 +163,7 @@ local ft_str = table.concat(
 
 vim.cmd("autocmd Filetype " .. ft_str .. " setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()")
 vim.cmd "autocmd ColorScheme * highlight WhichKeyFloat ctermbg=NONE ctermfg=NONE"
+-- vim.cmd "autocmd ColorScheme * lua require'lightspeed'.init_highlight(true)"
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
   callback = function()
@@ -175,3 +176,23 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost", "Inse
     require("hoangat.modules.config.winbar").get_winbar()
   end,
 })
+
+local autocmd = vim.api.nvim_create_autocmd
+-- Disable statusline in dashboard
+autocmd("FileType", {
+  pattern = "alpha",
+  callback = function()
+    vim.opt.laststatus = 0
+    vim.opt.showtabline = 0
+  end,
+})
+
+autocmd("BufUnload", {
+  buffer = 0,
+  callback = function()
+    vim.opt.laststatus = 3
+    vim.opt.showtabline = 0
+  end,
+})
+
+vim.opt.statusline = "%!v:lua.require'ui.statusline'.run()"

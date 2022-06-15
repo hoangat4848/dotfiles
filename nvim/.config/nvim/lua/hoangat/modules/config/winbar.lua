@@ -36,6 +36,7 @@ local get_filename = function()
     end
 
     -- return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
+    -- return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#AlphaHeader#" .. filename .. "%*"
     return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. filename
   end
 end

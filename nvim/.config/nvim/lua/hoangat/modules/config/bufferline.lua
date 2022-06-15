@@ -92,5 +92,5 @@ bufferline.setup {
   },
 }
 
-vim.cmd "hi BufferLineSeparator guifg=#11121d guibg=NONE"
+-- vim.cmd "hi BufferLineSeparator guifg=#11121d guibg=NONE"
 vim.opt.showtabline = 0

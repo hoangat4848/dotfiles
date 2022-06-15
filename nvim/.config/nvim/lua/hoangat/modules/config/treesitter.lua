@@ -10,7 +10,7 @@ end
 -- }
 
 treesitter.setup {
-  ensure_installed = { "html", "lua", "typescript", "javascript", "python", "json", "jsonc", "pug" },
+  ensure_installed = { "html", "lua", "typescript", "javascript", "python", "json", "jsonc", "pug", "tsx", "scss" },
   sync_install = true,
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
@@ -37,6 +37,13 @@ treesitter.setup {
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
+    javascript = {
+      __default = "// %s",
+      jsx_element = "{/* %s */}",
+      jsx_fragment = "{/* %s */}",
+      jsx_attribute = "// %s",
+      comment = "// %s",
+    },
   },
   textobjects = {
     select = {
@@ -126,6 +133,14 @@ treesitter.setup {
     enable = true,
   },
 }
+
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.javascript = {
+--   filetype = "javascript, javascriptreact", -- if filetype does not match the parser name
+-- }
+
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.javascriptreact = "javascript" -- the someft filetype will use the python parser and queries.
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.glimmer = {

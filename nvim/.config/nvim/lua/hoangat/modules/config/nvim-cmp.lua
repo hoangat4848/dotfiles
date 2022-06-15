@@ -14,6 +14,8 @@ local check_backspace = function() -- Helps SUPER TAB
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+--require("base46").load_highlight "cmp"
+
 local function border(hl_name)
   return {
     { "╭", hl_name },
@@ -27,6 +29,19 @@ local function border(hl_name)
   }
 end
 
+-- local function border(hl_name)
+--   return {
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--     { " ", hl_name },
+--   }
+-- end
+
 local cmp_window = require "cmp.utils.window"
 
 function cmp_window:has_scrollbar()
@@ -39,7 +54,10 @@ cmp.setup {
   --   documentation = { border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" } },
   -- },
   window = {
-    completion = { border = border "CmpBorder" },
+    completion = {
+      border = border "CmpBorder",
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
     documentation = { border = border "CmpDocBorder" },
   },
   snippet = {

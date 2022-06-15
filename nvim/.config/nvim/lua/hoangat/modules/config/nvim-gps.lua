@@ -7,28 +7,52 @@ gps.setup {
   disable_icons = false, -- Setting it to true will disable all icons
 
   icons = {
-    ["class-name"] = "%#CmpItemKindClass#" .. icons.kind.Class .. "%*" .. " ", -- Classes and class-like objects
-    ["function-name"] = "%#CmpItemKindFunction#" .. icons.kind.Function .. "%*" .. " ", -- Functions
-    ["method-name"] = "%#CmpItemKindMethod#" .. icons.kind.Method .. "%*" .. " ", -- Methods (functions inside class-like objects)
-    ["container-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ", -- Containers (example: lua tables)
-    ["tag-name"] = "%#CmpItemKindKeyword#" .. icons.misc.Tag .. "%*" .. " ", -- Tags (example: html tags)
-    ["mapping-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
-    ["sequence-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
-    ["null-name"] = "%CmpItemKindField#" .. icons.kind.Field .. "%*" .. " ",
-    ["boolean-name"] = "%CmpItemKindValue#" .. icons.type.Boolean .. "%*" .. " ",
-    ["integer-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
-    ["float-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
-    ["string-name"] = "%CmpItemKindValue#" .. icons.type.String .. "%*" .. " ",
-    ["array-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
-    ["object-name"] = "%CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
-    ["number-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
-    ["table-name"] = "%CmpItemKindProperty#" .. icons.ui.Table .. "%*" .. " ",
-    ["date-name"] = "%CmpItemKindValue#" .. icons.ui.Calendar .. "%*" .. " ",
-    ["date-time-name"] = "%CmpItemKindValue#" .. icons.ui.Table .. "%*" .. " ",
-    ["inline-table-name"] = "%CmpItemKindProperty#" .. icons.ui.Calendar .. "%*" .. " ",
-    ["time-name"] = "%CmpItemKindValue#" .. icons.misc.Watch .. "%*" .. " ",
-    ["module-name"] = "%CmpItemKindModule#" .. icons.kind.Module .. "%*" .. " ",
+    ["class-name"] = "%#GpsItemKindClass#" .. icons.kind.Class .. "%*" .. " ", -- Classes and class-like objects
+    ["function-name"] = "%#GpsItemKindFunction#" .. icons.kind.Function .. "%*" .. " ", -- Functions
+    ["method-name"] = "%#GpsItemKindMethod#" .. icons.kind.Method .. "%*" .. " ", -- Methods (functions inside class-like objects)
+    ["container-name"] = "%#GpsItemKindProperty#" .. icons.type.Object .. "%*" .. " ", -- Containers (example: lua tables)
+    ["tag-name"] = "%#GpsItemKindKeyword#" .. icons.misc.Tag .. "%*" .. " ", -- Tags (example: html tags)
+    ["mapping-name"] = "%#GpsItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+    ["sequence-name"] = "%GpsItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+    ["null-name"] = "%GpsItemKindField#" .. icons.kind.Field .. "%*" .. " ",
+    ["boolean-name"] = "%GpsItemKindValue#" .. icons.type.Boolean .. "%*" .. " ",
+    ["integer-name"] = "%GpsItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["float-name"] = "%GpsItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["string-name"] = "%GpsItemKindValue#" .. icons.type.String .. "%*" .. " ",
+    ["array-name"] = "%GpsItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+    ["object-name"] = "%GpsItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+    ["number-name"] = "%GpsItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+    ["table-name"] = "%GpsItemKindProperty#" .. icons.ui.Table .. "%*" .. " ",
+    ["date-name"] = "%GpsItemKindValue#" .. icons.ui.Calendar .. "%*" .. " ",
+    ["date-time-name"] = "%GpsItemKindValue#" .. icons.ui.Table .. "%*" .. " ",
+    ["inline-table-name"] = "%GpsItemKindProperty#" .. icons.ui.Calendar .. "%*" .. " ",
+    ["time-name"] = "%GpsItemKindValue#" .. icons.misc.Watch .. "%*" .. " ",
+    ["module-name"] = "%GpsItemKindModule#" .. icons.kind.Module .. "%*" .. " ",
   },
+
+  -- icons = {
+  --   ["class-name"] = "%#CmpItemKindClass#" .. icons.kind.Class .. "%*" .. " ", -- Classes and class-like objects
+  --   ["function-name"] = "%#CmpItemKindFunction#" .. icons.kind.Function .. "%*" .. " ", -- Functions
+  --   ["method-name"] = "%#CmpItemKindMethod#" .. icons.kind.Method .. "%*" .. " ", -- Methods (functions inside class-like objects)
+  --   ["container-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ", -- Containers (example: lua tables)
+  --   ["tag-name"] = "%#CmpItemKindKeyword#" .. icons.misc.Tag .. "%*" .. " ", -- Tags (example: html tags)
+  --   ["mapping-name"] = "%#CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+  --   ["sequence-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+  --   ["null-name"] = "%CmpItemKindField#" .. icons.kind.Field .. "%*" .. " ",
+  --   ["boolean-name"] = "%CmpItemKindValue#" .. icons.type.Boolean .. "%*" .. " ",
+  --   ["integer-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+  --   ["float-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+  --   ["string-name"] = "%CmpItemKindValue#" .. icons.type.String .. "%*" .. " ",
+  --   ["array-name"] = "%CmpItemKindProperty#" .. icons.type.Array .. "%*" .. " ",
+  --   ["object-name"] = "%CmpItemKindProperty#" .. icons.type.Object .. "%*" .. " ",
+  --   ["number-name"] = "%CmpItemKindValue#" .. icons.type.Number .. "%*" .. " ",
+  --   ["table-name"] = "%CmpItemKindProperty#" .. icons.ui.Table .. "%*" .. " ",
+  --   ["date-name"] = "%CmpItemKindValue#" .. icons.ui.Calendar .. "%*" .. " ",
+  --   ["date-time-name"] = "%CmpItemKindValue#" .. icons.ui.Table .. "%*" .. " ",
+  --   ["inline-table-name"] = "%CmpItemKindProperty#" .. icons.ui.Calendar .. "%*" .. " ",
+  --   ["time-name"] = "%CmpItemKindValue#" .. icons.misc.Watch .. "%*" .. " ",
+  --   ["module-name"] = "%CmpItemKindModule#" .. icons.kind.Module .. "%*" .. " ",
+  -- },
 
   -- Add custom configuration per language or
   -- Disable the plugin for a language
@@ -77,9 +101,9 @@ gps.setup {
   -- 0 means no limit
   -- Note: to make use of depth feature properly, make sure your separator isn't something that can appear
   -- in context names (eg: function names, class names, etc)
-  depth = 0,
+  depth = 5,
 
   -- indicator used when context is hits depth limit
   depth_limit_indicator = "..",
-  text_hl = "LineNr",
+  text_hl = "AlphaHeader",
 } -- Customized config

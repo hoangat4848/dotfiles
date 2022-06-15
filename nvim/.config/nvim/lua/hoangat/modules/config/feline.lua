@@ -14,7 +14,7 @@ options.icon_styles = {
   default = {
     left = "",
     right = " ",
-    main_icon = "  ",
+    main_icon = " ⽕ ",
     vi_mode_icon = " ",
     position_icon = " ",
   },
@@ -37,7 +37,7 @@ options.icon_styles = {
   round = {
     left = "",
     right = "",
-    main_icon = "  ",
+    main_icon = " ⽕ ",
     vi_mode_icon = " ",
     position_icon = " ",
   },
@@ -51,7 +51,7 @@ options.icon_styles = {
   },
 }
 
-options.separator_style = options.icon_styles["default"]
+options.separator_style = options.icon_styles["round"]
 
 options.main_icon = {
   provider = options.separator_style.main_icon,
