@@ -124,9 +124,9 @@ map("n", "<space>gs", "<cmd>Neogit<CR>")
 --[[ Telescope ]]
 local is_git_dir = os.execute "git rev-parse --is-inside-work-tree >> /dev/null 2>&1"
 if is_git_dir == 0 then
-  map("n", "<C-p>", '<cmd>lua require"telescope.builtin".git_files()<CR>')
+  map("n", "<C-p>", "<cmd>Telescope git_files<CR>")
 else
-  map("n", "<C-p>", '<cmd>lua require"telescope.builtin".find_files()<CR>')
+  map("n", "<C-p>", "<cmd>Telescope find_files<CR>")
 end
 
 --[[ Git signs ]]
@@ -229,3 +229,6 @@ map("n", "j", 'v:count == 0 ? "gj" : "j"', { expr = true })
 map("n", "k", 'v:count == 0 ? "gk" : "k"', { expr = true })
 map("n", "^", 'v:count == 0 ? "g^" :  "^"', { expr = true })
 map("n", "$", 'v:count == 0 ? "g$" : "$"', { expr = true })
+
+--map("v", "<C-[>", "y'<pgv")
+--map("v", "<C-]>", "y'>pgv")

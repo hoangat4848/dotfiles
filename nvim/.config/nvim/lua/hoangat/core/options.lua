@@ -30,6 +30,20 @@ o.pumheight = 8 -- Popup menu height
 
 -- General
 o.conceallevel = 0 -- so that `` is visible in markdown files
+vim.cmd [[
+  let g:clipboard = {
+  \ 'name': 'win32yank',
+  \ 'copy': {
+  \    '+': 'win32yank.exe -i --crlf',
+  \    '*': 'win32yank.exe -i --crlf',
+  \  },
+  \ 'paste': {
+  \    '+': 'win32yank.exe -o --lf',
+  \    '*': 'win32yank.exe -o --lf',
+  \ },
+  \ 'cache_enabled': 0,
+  \ }
+]]
 o.clipboard = "unnamedplus"
 o.fileencoding = "utf-8"
 o.hidden = true

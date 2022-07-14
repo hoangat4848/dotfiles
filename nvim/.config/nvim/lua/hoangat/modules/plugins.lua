@@ -140,6 +140,7 @@ if packer then
 
     use { -- Telescope
       "nvim-telescope/telescope.nvim",
+      cmd = "Telescope",
       config = get_config "telescope",
       requires = {
         -- "nvim-lua/plenary.nvim",

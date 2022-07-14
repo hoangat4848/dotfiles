@@ -1,0 +1,129 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.012  000.012: --- NVIM STARTING ---
+000.796  000.784: locale set
+001.579  000.783: inits 1
+001.602  000.024: window checked
+001.608  000.006: parsing arguments
+005.352  003.744: expanding arguments
+005.384  000.032: inits 2
+005.861  000.478: init highlight
+005.864  000.002: waiting for UI
+006.971  001.108: done waiting for UI
+006.985  000.014: init screen for UI
+007.017  000.032: init default mappings
+007.047  000.030: init default autocommands
+008.996  000.056  000.056: sourcing /usr/share/nvim/runtime/ftplugin.vim
+009.373  000.035  000.035: sourcing /usr/share/nvim/runtime/indent.vim
+010.237  000.066  000.066: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/nvim-treesitter/autoload/nvim_treesitter.vim
+024.868  015.420  015.354: sourcing /home/hoangat/.config/nvim/init.lua
+024.880  002.321: sourcing vimrc file(s)
+025.514  000.044  000.044: sourcing /usr/share/nvim/runtime/filetype.lua
+032.413  000.016  000.016: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
+032.846  000.014  000.014: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim
+032.985  000.084  000.084: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-markdown/ftdetect/markdown.vim
+033.776  008.243  008.130: sourcing /usr/share/nvim/runtime/filetype.vim
+034.292  000.083  000.083: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+034.428  000.561  000.478: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+036.424  000.504  000.504: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+036.463  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+036.638  000.163  000.163: sourcing /usr/share/nvim/runtime/plugin/man.vim
+037.203  000.275  000.275: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+037.292  000.638  000.363: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+037.461  000.154  000.154: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+037.495  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+037.653  000.013  000.013: sourcing /home/hoangat/.local/share/nvim/rplugin.vim
+037.661  000.152  000.139: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+037.819  000.141  000.141: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+037.870  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+038.028  000.144  000.144: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+038.126  000.075  000.075: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+038.182  000.026  000.026: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+038.222  000.017  000.017: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+174.715  000.056  000.056: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+192.034  000.051  000.051: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons/plugin/nvim-web-devicons.vim
+278.055  000.035  000.035: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/opt/nvim_context_vt/plugin/nvim_context_vt.vim
+278.613  000.030  000.030: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/opt/vim-mustache-handlebars/ftdetect/handlebars.vim
+278.663  000.025  000.025: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/opt/vim-mustache-handlebars/ftdetect/mustache.vim
+278.669  240.381  240.185: sourcing /home/hoangat/.config/nvim/plugin/packer_compiled.lua
+278.834  002.656: loading rtp plugins
+279.846  000.131  000.131: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim/plugin/fix_cursorhold_nvim.vim
+280.091  000.093  000.093: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/HighStr.nvim/plugin/hscmds.vim
+280.194  000.011  000.011: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/JABS.nvim/plugin/jabs.vim
+281.098  000.786  000.786: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+281.555  000.349  000.349: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/beacon.nvim/plugin/beacon.vim
+281.719  000.053  000.053: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/bufdelete.nvim/plugin/bufdelete.vim
+282.102  000.107  000.107: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/comment-box.nvim/plugin/comment_box.vim
+282.285  000.063  000.063: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/dressing.nvim/plugin/dressing.lua
+285.119  002.760  002.760: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/emmet-vim/plugin/emmet.vim
+285.413  000.079  000.079: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/harpoon/plugin/mark.vim
+285.735  000.230  000.230: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/hop.nvim/plugin/hop.vim
+286.251  000.391  000.391: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+286.388  000.031  000.031: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/lightspeed.nvim/plugin/lightspeed.vim
+286.769  000.217  000.217: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/lspsaga.nvim/plugin/lspsaga.vim
+287.373  000.342  000.342: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+287.487  000.039  000.039: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua/plugin/colorizer.vim
+287.747  000.170  000.170: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-gps/plugin/nvim-gps.vim
+287.995  000.129  000.129: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
+288.253  000.102  000.102: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+288.492  000.117  000.117: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-transparent/plugin/transparent.vim
+288.619  000.034  000.034: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-treehopper/plugin/tsht.vim
+290.170  001.432  001.432: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+290.334  000.018  000.018: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context/plugin/treesitter-context.vim
+291.045  000.613  000.613: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-treesitter-refactor/plugin/nvim-treesitter-refactor.vim
+292.848  001.689  001.689: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+293.479  000.489  000.489: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag/plugin/nvim-ts-autotag.vim
+293.905  000.311  000.311: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+294.221  000.176  000.176: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow/plugin/rainbow.vim
+294.495  000.060  000.060: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+295.304  000.604  000.604: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim/plugin/symbols-outline.vim
+295.570  000.037  000.037: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/todo-comments.nvim/plugin/todo.vim
+295.840  000.129  000.129: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/trouble.nvim/plugin/trouble.vim
+295.985  000.051  000.051: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/twilight.nvim/plugin/twilight.vim
+296.300  000.215  000.215: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-easy-align/plugin/easy_align.vim
+297.643  001.234  001.234: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-fugitive/plugin/fugitive.vim
+297.903  000.136  000.136: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-illuminate/plugin/illuminate.vim
+300.995  000.092  000.092: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/unmatchit.vim
+301.377  000.014  000.014: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+302.449  000.273  000.273: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup.vim
+302.861  000.099  000.099: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/perf.vim
+303.911  000.418  000.418: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/loader.vim
+305.012  000.557  000.557: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/matchparen.vim
+306.960  008.907  007.454: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-matchup/plugin/matchup.vim
+307.750  000.632  000.632: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-surround/plugin/surround.vim
+308.501  000.156  000.156: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/plugs.vim
+309.412  000.149  000.149: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/maps.vim
+309.874  000.102  000.102: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-visual-multi/autoload/vm/maps/all.vim
+311.310  003.442  003.035: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/vim-visual-multi/plugin/visual-multi.vim
+311.452  000.021  000.021: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/which-key.nvim/plugin/which-key.vim
+311.576  000.026  000.026: sourcing /home/hoangat/dotfiles/scripts/.local/share/nvim/site/pack/packer/start/zen-mode.nvim/plugin/zen-mode.vim
+311.697  006.405: loading packages
+312.047  000.008  000.008: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/after/plugin/matchit.vim
+312.531  000.421  000.421: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/Comment.nvim/after/plugin/Comment.lua
+312.879  000.278  000.278: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+313.058  000.096  000.096: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp-emoji/after/plugin/cmp_emoji.lua
+313.334  000.211  000.211: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+313.503  000.109  000.109: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
+313.676  000.115  000.115: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+313.993  000.259  000.259: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+314.061  000.866: loading after plugins
+314.077  000.016: inits 3
+322.990  008.912: reading ShaDa
+324.749  000.092  000.092: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/ts_engine.vim
+326.884  000.034  000.034: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/re.vim
+327.123  004.008: opening buffers
+329.531  002.408: BufEnter autocommands
+329.566  000.035: editing files in windows
+374.530  000.358  000.358: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/pos.vim
+375.535  000.484  000.484: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-matchup/autoload/matchup/delim.vim
+400.543  070.135: VimEnter autocommands
+400.550  000.007: UIEnter autocommands
+401.206  000.228  000.228: sourcing /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+401.217  000.439: before starting main loop
+402.284  000.122  000.122: sourcing /home/hoangat/.local/share/nvim/site/pack/packer/start/vim-illuminate/autoload/illuminate.vim
+404.660  003.320: first screen update
+404.664  000.004: --- NVIM STARTED ---
